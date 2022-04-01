@@ -1,3 +1,11 @@
+# SysterLegLog
+
+Drive med dokument: https://drive.google.com/drive/folders/12M9Fpcb2U41MiF2wkEQj8TVN9jd5Mdq6?usp=sharing
+
+Trello: https://trello.com/b/PsgokJCQ/kiss-leglog-syster  
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

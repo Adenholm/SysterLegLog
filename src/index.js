@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-var element = React.createElement('h1', {className: 'greeting'}, 'Borzois are the world!');
+var element = React.createElement('h1', {classList: 'greeting'}, 'Borzois are the world! you have been hacked');
 
 ReactDOM.render(element, document.getElementById('root')
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

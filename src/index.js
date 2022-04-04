@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-var element = React.createElement('h1', {classList: 'greeting'}, 'Borzois are the world! you have been hacked');
+var element = React.createElement('h1', {className: 'greeting'}, 'Plants are the world!');
 
 ReactDOM.render(element, document.getElementById('root')
 );

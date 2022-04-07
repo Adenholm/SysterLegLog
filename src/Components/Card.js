@@ -1,23 +1,25 @@
 import { render } from "@testing-library/react"
-import React from "react"
 import ReactDOM from 'react-dom';
-import "./Card.css"
+import "./Card.css";
+import Modal from "./Modal.js";
+import React, { useState } from "react";
 
-
-class Card extends React.Component{
-    enhancePic(){
-
-    }
-    render(){
-        return(
-            <div className="cardSize">
-                <div className="card__body">
-                <button onClick={this.enhancePic}><img src={this.props.img} className="photo"/></button>                
-                </div>
-                <h1 className="card__title">{this.props.title}</h1>
-        
-               </div>
-        )
-    }
-}
+const Card = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return(
+        <div className="cardSize">
+            
+            <button onClick={() => setIsOpen(true)}><img src={props.img} className="photo"/></button>                
+            
+            {isOpen && (
+                <Modal 
+                    setIsOpen={setIsOpen}
+                    props = {props}
+                />
+                
+            )}
+        </div>
+    );
+    
+};
 export default Card

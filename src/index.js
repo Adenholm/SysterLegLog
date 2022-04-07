@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-var element = React.createElement('h1', {className: 'greeting'}, 'windows 11 is the world!');
 
-ReactDOM.render(element, document.getElementById('root')
+var element = React.createElement('h1', {className: 'greeting'}, 'Borzoiii')
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
 );
 
 

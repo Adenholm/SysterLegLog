@@ -5,8 +5,8 @@ import computerKeyboard from "./sounds/Computer-keyboard.wav";
 
 const Modal =({setIsOpen,props}) =>{
     return(
-        <div className="modal">
-            <button onClick={() => setIsOpen(false)}><img src={props.img} className="bigPhoto"/></button>
+        <div id="modal">
+            <button className= "btn" onClick={() => setIsOpen(false)}><img src={props.img} className="bigPhoto"/></button>
             <Sound
                 url = {computerKeyboard}
                 playStatus = {Sound.status.PLAYING}

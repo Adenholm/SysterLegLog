@@ -1,22 +1,23 @@
 
-.modal {
-    width: 250px;
-    height: 170px;
-    background: white;
-    color: white;
-    z-index: 10;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+#modal{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(168, 168, 168, 0.6);
 }
 
-.cardSize{
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;
+.btn {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
+
   
 .bigPhoto{
-    max-height: 900px;
-    max-width: 900px;
+    max-height: 700px;
+    max-width: 700px;
 }

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Card from "./Card";
 
 let Image = function statelessFunctionComponentClass(props) {
   //let source = './Components/images/' + props.source;
@@ -13,6 +14,7 @@ let Image = function statelessFunctionComponentClass(props) {
 
   return (
     <img src={source} style={style} />
+    //<Card img={source} style={style} />
   );
 };
 

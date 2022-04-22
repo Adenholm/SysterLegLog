@@ -51,8 +51,8 @@ import Card from "./Components/Card"
 
 function createImage(image) {
   console.log(image);
- // return <Image source={image} key={image} />;
-  return <Image source = {image} key={image} />;
+// return <Image source={image} key={image} />;
+  return <Card img = {image} key={image} />;
   
 }
 

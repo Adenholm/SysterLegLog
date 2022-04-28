@@ -6,8 +6,9 @@ import {
     Link
   } from 'react-router-dom';
   import StartPage from './pages/StartPage';
-  import Categori1 from './pages/Categori1';
+  import Categori1 from './pages/CardPage';
   import Settings from './pages/Settings';
+import CardPage from './pages/CardPage';
 
 
   const Pages = () => {
@@ -16,7 +17,7 @@ import {
               < div className = "Pages">
                   <ul>
                       <li>
-                          < Link to = "/Kategori1">Blandat</Link>
+                          < Link to = "/Cards">Blandat</Link>
                       </li>
                       <li>
                           <Link to = "/Settings">Settings</Link>
@@ -25,7 +26,7 @@ import {
                   </ul>
                   <Routes>
                       <Route exact path= '/' element ={< StartPage/>}></Route>
-                      <Route exact path= '/Kategori1' element ={< Categori1/>}></Route>
+                      <Route exact path= '/Cards' element ={< CardPage/>}></Route>
                       <Route exact path= '/Settings' element ={< Settings/>}></Route>
                   </Routes>
 

@@ -1,7 +1,6 @@
 import React from "react";
-import data from '../data.json';
-import Card from "../Card";
-
+import data from './data.json';
+import Card from "./Card";
 
 function createImage(image) {
 
@@ -13,23 +12,13 @@ function createImage(image) {
     return images.map(createImage);
   }
 
-function Categori1(){
+function CardGrid(){
    
     return (
-      <div>
-      <h1>Hej och välkommen till vår första kategorisida</h1>
-
     <div className="row">
-          <div className="col-sm-12 text-center">
-
-  
-          
            { createImages(data.images)} 
 
-
-          </div>
-        </div>
     </div>
     );
 }
-export default Categori1;
+export default CardGrid;

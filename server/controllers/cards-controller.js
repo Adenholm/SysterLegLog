@@ -4,10 +4,11 @@ const knex = require('./../db')
 
 
 //retrieve all cards
+//probably should rename....
 // async is used to add a promise, do different things if we get error
 exports.cardsAll = async (req,res) => {
     knex
-     .select('*') //select all records
+     .select('*') //select all
      .from('cards') //from cards table
      // if successful:
      .then(userData => {

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 
 function StartPage (){
-    return <div>
-        <h1>Välkomming till LegLoggen</h1>
-    </div>
-}
+
+return (
+    <h1>Staart</h1>
+)
+
+      }
+    
+
+
 export default StartPage;

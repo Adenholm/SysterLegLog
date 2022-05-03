@@ -8,6 +8,7 @@ import stitch from "./Components/images/stitch.png"
 import pettson from "./Components/images/pettsonsocka.jpg"
 import Card from "./Components/Card"
 import Pages from './Components/Pages';
+import CategoryPage from './Components/pages/CategoryPage';
 
 
 
@@ -17,7 +18,7 @@ function App() {
     return (
       <div className="container">
         
-        < Pages />
+        < CategoryPage />
       </div>
     );
   }

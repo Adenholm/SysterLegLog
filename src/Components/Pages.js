@@ -17,7 +17,6 @@ import CategoryPage from './pages/CategoryPage';
       return (
           <Router>
               < div className = "Pages">
-                  
                   <Routes>
                       <Route exact path= '/' element ={< StartPage/>}></Route>
                       <Route exact path= '/Cards' element ={< CardPage/>}></Route>

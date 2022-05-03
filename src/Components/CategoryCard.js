@@ -1,17 +1,24 @@
 import React from "react";
 import "./CategoryCard.css"
+import { useState } from "react";
 
-function CategoryCard(props) {
+const CategoryCard = (props) => {
+
     return(
-        <div className="cardSize">
+        
             <div className="cardBody">
-                <div className="frame">
-                    <img src={props.img} className= "photo"/>
-                    <h2 className="cardTitle">{props.title}</h2>
+                
+                <button>
+                <img src={props.img} className= "photo"/> 
+                <div className="container">
+                    <h2><b>{props.title}</b></h2>
+                    
                 </div>
+                
+                </button> 
             </div>
 
-        </div>
-    )
-}
+        
+    );
+};
 export default CategoryCard;

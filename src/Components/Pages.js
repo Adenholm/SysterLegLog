@@ -16,11 +16,11 @@ import CardPage from './pages/CardPage';
           <Router>
               < div className = "Pages">
                   <ul>
-                      <li>
-                          < Link to = "/Cards">Blandat</Link>
+                      <li className='item'>
+                          < Link to = "/Cards" className='link'>Blandat</Link>
                       </li>
-                      <li>
-                          <Link to = "/Settings">Settings</Link>
+                      <li className='item'>
+                          <Link to = "/Settings" className='link'>Settings</Link>
                       </li>
                       
                   </ul>

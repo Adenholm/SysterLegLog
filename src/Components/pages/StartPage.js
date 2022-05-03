@@ -2,6 +2,7 @@ import React from "react";
 import CategoryCard from '../CategoryCard';
 import owl from "../images/owl.jpg"
 import {Link} from 'react-router-dom';
+import '../Pages.css';
 
 function StartPage (){
     return (
@@ -9,11 +10,11 @@ function StartPage (){
         <h1>Välkommen till LegLoggen</h1>
         <ul>
             
-            <li>
-                <Link to = "/CategoryPage">Categories</Link>
+            <li className="item">
+                <Link to = "/CategoryPage" className="link">Categories</Link>
             </li>
-            <li>
-                <Link to = "/Settings">Settings</Link>
+            <li className="item">
+                <Link to = "/Settings" className="link">Settings</Link>
             </li>
                       
         </ul>

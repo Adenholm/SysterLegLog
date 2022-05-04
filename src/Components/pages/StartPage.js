@@ -14,8 +14,12 @@ function StartPage (){
                 <Link to = "/CategoryPage" className="link">Categories</Link>
             </li>
             <li className="item">
+                <Link to = "/GuessGame" className="link">Guess Game</Link>
+            </li>
+            <li className="item">
                 <Link to = "/Settings" className="link">Settings</Link>
             </li>
+            
                       
         </ul>
         

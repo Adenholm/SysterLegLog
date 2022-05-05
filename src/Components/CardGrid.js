@@ -30,7 +30,7 @@ export const CardGrid = () =>{
   const fetchCards = async () => {
     //send get request to cards/all
     axios
-      .get('http://localhost:4001/cards/category', {categoryId:'animal'})
+      .get('http://localhost:4001/cards/category/animal')
       .then(response => {
         console.log(response.data)
         setCards(response.data)

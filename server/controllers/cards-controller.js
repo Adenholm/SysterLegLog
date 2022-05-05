@@ -44,11 +44,9 @@ exports.cardsCreate = async (req,res) => {
     })
 }
 
-exports.cardsCategory = async (req,res) => {
-    knex
-     .select('*') //select all
-     .from('cards') //from cards table
-     .where({categoryId: req.body.categoryId}) // select one category
+exports.cardsCategory = async (req, res) => {
+    knex('cards')
+     .where({categoryId: req.params.id}) // select one category
     
      // if successful:
      .then(userData => {
@@ -59,7 +57,7 @@ exports.cardsCategory = async (req,res) => {
      .catch(err => {
          //send error message
 
-         res.json({ message: 'There was an error retrieving the category: ${err}'})
+         res.json({ message: 'There was an error retrieving the category: ' + req.params.id})
      })
      
 }

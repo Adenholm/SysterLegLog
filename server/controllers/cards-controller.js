@@ -19,7 +19,7 @@ exports.cardsAll = async (req,res) => {
      .catch(err => {
          //send error message
 
-         res.json({ message: 'There was an error retrieving the cards: ${err}'})
+         res.json({ message: 'There was an error retrieving all the cards: ${err}'})
      })
 }
 
@@ -42,6 +42,26 @@ exports.cardsCreate = async (req,res) => {
         //send error message
         res.json({message: `There was an error creating \'${req.body.name}\' card.` })
     })
+}
+
+exports.cardsCategory = async (req,res) => {
+    knex
+     .select('*') //select all
+     .from('cards') //from cards table
+     .where({categoryId: req.body.categoryId}) // select one category
+    
+     // if successful:
+     .then(userData => {
+         // send cards from database
+         res.json(userData)
+     })
+     // if unsuccessful:
+     .catch(err => {
+         //send error message
+
+         res.json({ message: 'There was an error retrieving the category: ${err}'})
+     })
+     
 }
 
 

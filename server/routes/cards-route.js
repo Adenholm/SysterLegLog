@@ -13,6 +13,14 @@ router.get('/all', cardsRoutes.cardsAll)
 // Add route for POST request to create new book
 router.post('/create', cardsRoutes.cardsCreate)
 
+// add route for GET request to retrieve one categroy from cards
+router.get('/category', cardsRoutes.cardsCategory)
+/*router.get('/category/:categoryId', function (req,res) {
+                              cardsRoutes.cardsCategory(req,res)
+                            });*/
+
+
+
 /*
 router
   .route("/:id")

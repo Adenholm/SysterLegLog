@@ -24,21 +24,25 @@ export const CardGrid = () =>{
   useEffect(() => {
     fetchCards()
   },[])
-
+  
+  //, {params:{ categoryId: 'animal'}}
+//.get('http://localhost:4001/cards', {categoryId: 'animal'})
   const fetchCards = async () => {
     //send get request to cards/all
     axios
-      .get('http://localhost:4001/cards/all')
+      .get('http://localhost:4001/cards/category', {categoryId:'animal'})
       .then(response => {
         console.log(response.data)
         setCards(response.data)
         setLoading(false)
       })
-      .catch(error => console.error('Couldnt retrieve cards: ${error}'))
+      .catch(error => console.error('Couldnt retrieve cards in cardgrid: ',error))
   }
   return (
     <div className="row">
-           { createCards(cards)}
+      {console.log(cards)}
+      { createCards(cards)}
+           
 
     </div>
     );
@@ -46,3 +50,5 @@ export const CardGrid = () =>{
 
 };
 export default CardGrid
+
+//

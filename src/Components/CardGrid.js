@@ -27,7 +27,7 @@ export const CardGrid = () =>{
   
   //, {params:{ categoryId: 'animal'}}
 //.get('http://localhost:4001/cards', {categoryId: 'animal'})
-  const fetchCards = async () => {
+  const fetchCards = () => {
     //send get request to cards/all
     axios
       .get('http://localhost:4001/cards/category/animal')

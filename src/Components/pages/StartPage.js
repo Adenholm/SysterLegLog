@@ -8,7 +8,7 @@ function StartPage (){
     return (
     <div>
         <h1>Välkommen till LegLoggen</h1>
-        <ul>
+        <ul className="nav">
             
             <li className="item">
                 <Link to = "/CategoryPage" className="link">Categories</Link>

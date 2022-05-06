@@ -1,17 +1,19 @@
 import React from "react";
 import CategoryCard from "../CategoryCard"
 import owl from "../images/owl.jpg"
+import animals from "../images/pets.jpg"
+import instruments from "../images/instruments.png"
 import {Link, useNavigate} from 'react-router-dom';
 
 const categories = [
     {
     name: 'Djur',
-    pic: owl
+    pic: animals
     },
 
     {
     name: 'Instrument',
-    pic: owl
+    pic: instruments
     },
 
     {

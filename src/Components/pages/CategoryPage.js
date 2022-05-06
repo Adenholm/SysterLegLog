@@ -1,7 +1,7 @@
 import React from "react";
 import CategoryCard from "../CategoryCard"
 import owl from "../images/owl.jpg"
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 const categories = [
     {
@@ -18,14 +18,17 @@ const categories = [
 ]
 
 function createCategoryCard(cardData) {
-
-    return <Link to = "/Cards">
-                <CategoryCard 
+    
+     return(
+         <div>
+             <CategoryCard 
                     img ={cardData.pic}
                     title={cardData.name}
                     />
-                </Link>
-    
+             <a ></a>
+         </div>
+     )
+
   }
   
   function createCategoryCards(images) {

@@ -17,7 +17,7 @@ function createCard(cardData) {
   }
 
 
-export const CardGrid = () =>{
+export const CardGrid = (props) =>{
   const [cards, setCards] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -30,7 +30,7 @@ export const CardGrid = () =>{
   const fetchCards = () => {
     //send get request to cards/all
     axios
-      .get('http://localhost:4001/cards/category/animal')
+      .get('http://localhost:4001/cards/category/'+props.category)
       .then(response => {
         console.log(response.data)
         setCards(response.data)

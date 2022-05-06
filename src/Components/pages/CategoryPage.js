@@ -12,7 +12,32 @@ const categories = [
     {
     name: 'Instrument',
     pic: owl
-    }
+    },
+
+    {
+    name: 'Fordon',
+    pic: owl
+    },
+
+    {
+    name: 'Inomhus',
+    pic: owl
+    },
+
+    {
+    name: 'Natur',
+    pic: owl
+    },
+
+    {
+    name: 'Mänskliga ljud',
+    pic: owl
+    },
+
+    {
+    name: 'Varningsljud',
+    pic: owl
+    },
 
 
 ]
@@ -20,13 +45,13 @@ const categories = [
 function createCategoryCard(cardData) {
     
      return(
-         <div>
+         
+             
              <CategoryCard 
                     img ={cardData.pic}
                     title={cardData.name}
                     />
-             <a ></a>
-         </div>
+            
      )
 
   }
@@ -42,6 +67,7 @@ function CategoryPage (){
 
     return(
         <div>
+            <h1>Kategorier</h1>
             { createCategoryCards(categories)}
 
            

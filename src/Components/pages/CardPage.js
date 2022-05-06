@@ -7,7 +7,7 @@ function CardPage(){
    
     return (
       <div>
-      <h1>Hej och välkommen till vår första kategorisida</h1>
+      <h1>{location.state.category}</h1>
 
     <div className="row">
           <div className="col-sm-12 text-center">

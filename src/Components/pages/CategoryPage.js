@@ -7,6 +7,11 @@ import {Link, useNavigate} from 'react-router-dom';
 
 const categories = [
     {
+        name: 'Alla kategorier',
+        pic: owl
+    
+    },
+    {
     name: 'Djur',
     pic: animals
     },
@@ -39,7 +44,8 @@ const categories = [
     {
     name: 'Varningsljud',
     pic: owl
-    },
+    }
+
 
 
 ]

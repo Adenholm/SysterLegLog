@@ -25,19 +25,29 @@ export const CardGrid = (props) =>{
     fetchCards()
   },[])
   
-  //, {params:{ categoryId: 'animal'}}
-//.get('http://localhost:4001/cards', {categoryId: 'animal'})
+
   const fetchCards = () => {
     //send get request to cards/all
-    ///
-    axios
-      .get('http://localhost:4001/cards/category/'+props.category)
+    if(props.category=='Alla kategorier'){
+      axios
+      .get('http://localhost:4001/cards/all')
       .then(response => {
         console.log(response.data)
         setCards(response.data)
         setLoading(false)
       })
       .catch(error => console.error('Couldnt retrieve cards in cardgrid: ',error))
+    }
+
+    else{axios
+      .get('http://localhost:4001/cards/category/'+props.category)
+      .then(response => {
+        console.log(response.data)
+        setCards(response.data)
+        setLoading(false)
+      })
+      .catch(error => console.error('Couldnt retrieve cards in cardgrid: ',error))}
+    
   }
   return (
     <div className="row">

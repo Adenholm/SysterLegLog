@@ -4,6 +4,11 @@ import owl from "../images/owl.jpg"
 import animals from "../images/pets.jpg"
 import instruments from "../images/instruments.png"
 import {Link, useNavigate} from 'react-router-dom';
+import appliances from "../images/appliances.png"
+import kids from "../images/kids.png"
+import siren from "../images/siren.jpg"
+import trea from "../images/trea.jpg"
+import cars from "../images/cars.png"
 
 const categories = [
     {
@@ -23,27 +28,27 @@ const categories = [
 
     {
     name: 'Fordon',
-    pic: owl
+    pic: cars
     },
 
     {
     name: 'Inomhus',
-    pic: owl
+    pic: appliances
     },
 
     {
     name: 'Natur',
-    pic: owl
+    pic: trea
     },
 
     {
     name: 'Mänskliga ljud',
-    pic: owl
+    pic: kids
     },
 
     {
     name: 'Varningsljud',
-    pic: owl
+    pic: siren
     }
 
 

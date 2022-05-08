@@ -5,6 +5,7 @@ import Sound from "react-sound"
 
 function GuessPage (props){
     const [cards, setCards] = useState([])
+    const [isLoaded, setIsLoaded] = useState(false);
     const [correctCard, setCorrectCard] = useState(undefined)
     const [isPlaying,setIsPlaying] = useState(false);
     const numberOfCards = 4
@@ -12,33 +13,43 @@ function GuessPage (props){
     useEffect(() => {
       fetchCards()
     },[])
-  
+
+    
     const fetchCards = async () => {
       //send get request to cards/all
       axios
         .get('http://localhost:4001/cards/all')
         .then(response => {
-          console.log(response.data)
-          setCards(response.data.sort(() => Math.random() - Math.random()).slice(0, numberOfCards))
-          setCorrectCard(cards[Math.floor(Math.random() * cards.length)])
+          let randomCards = response.data.sort(() => Math.random() - Math.random()).slice(0, numberOfCards)
+          let choosenCard = randomCards[Math.floor(Math.random() * randomCards.length)]
+          choosenCard.isCorrect = true;
+          
+          console.log(randomCards)
+          setCards(randomCards)
+          console.log(choosenCard)
+          setCorrectCard(choosenCard)
           setIsPlaying(true)
+          setIsLoaded(true);
         })
         .catch(error => console.error('Couldnt retrieve cards: ' + error))
     }
 
 
     
-    
+    if (!isLoaded) {
+      return <div>Loading...</div>;
+    }
+
     return (
       <div className="row">
              {createCards(cards)} 
              <Sound
-                url = {correctCard ? correctCard.Sound : ''}
+                url = {correctCard ? correctCard.sound : ''}
                 playStatus = {
                   isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED
                 }
                 playFromPosition={0}
-            />
+              />
       </div>
       );
   

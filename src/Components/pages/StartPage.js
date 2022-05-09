@@ -11,13 +11,13 @@ function StartPage (){
         <ul className="nav">
             
             <li className="item">
-                <Link to = "/CategoryPage" className="link">Categories</Link>
+                <Link to = "/CategoryPage" className="link">Klicka och Lyssna</Link>
             </li>
             <li className="item">
-                <Link to = "/GuessGame" className="link">Guess Game</Link>
+                <Link to = "/GuessGame" className="link">Lyssna och Gissa</Link>
             </li>
             <li className="item">
-                <Link to = "/Settings" className="link">Settings</Link>
+                <Link to = "/Settings" className="link">Inställningar</Link>
             </li>
             
                       

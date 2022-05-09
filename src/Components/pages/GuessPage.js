@@ -7,7 +7,7 @@ function GuessPage (props){
     const [cards, setCards] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
     const [correctCard, setCorrectCard] = useState(undefined)
-    const [isPlaying,setIsPlaying] = useState(false);
+    const [isPlaying,setIsPlaying] = useState(true);
     const numberOfCards = 4
   
     useEffect(() => {
@@ -50,8 +50,17 @@ function GuessPage (props){
                 }
                 playFromPosition={0}
               />
+
+              
+              <button className= "btn" onClick={() => setIsPlaying(!isPlaying)} >
+              Spela igen
+              </button>
+               
+              
       </div>
+      
       );
+    
   
 }
 

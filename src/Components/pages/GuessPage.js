@@ -2,8 +2,10 @@ import React ,{useEffect, useState } from "react"
 import axios from 'axios'
 import Card from "./GuessCard"
 import Sound from "react-sound"
+import {Link} from "react-router-dom";
 
 function GuessPage (props){
+    <button><Link to = {-1}>Tillbaka</Link></button>
     const [cards, setCards] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
     const [correctCard, setCorrectCard] = useState(undefined)

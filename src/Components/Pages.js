@@ -21,7 +21,6 @@ import GuessPage from './pages/GuessPage';
       return (
           <Router>
               < div className = "Pages">
-              <button><Link to = {-1}>Tillbaka</Link></button>
                   <Routes>
                       <Route exact path= '/' element ={< StartPage/>}></Route>
                       <Route exact path= '/Cards' element ={< CardPage/>}></Route>

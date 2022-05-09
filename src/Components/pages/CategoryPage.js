@@ -1,54 +1,9 @@
 import React from "react";
 import CategoryCard from "../CategoryCard"
-import owl from "../images/owl.jpg"
-import animals from "../images/pets.jpg"
-import instruments from "../images/instruments.png"
+
 import {Link, useNavigate} from 'react-router-dom';
 
-const categories = [
-    {
-        name: 'Alla kategorier',
-        pic: owl
-    
-    },
-    {
-    name: 'Djur',
-    pic: animals
-    },
-
-    {
-    name: 'Instrument',
-    pic: instruments
-    },
-
-    {
-    name: 'Fordon',
-    pic: owl
-    },
-
-    {
-    name: 'Inomhus',
-    pic: owl
-    },
-
-    {
-    name: 'Natur',
-    pic: owl
-    },
-
-    {
-    name: 'Mänskliga ljud',
-    pic: owl
-    },
-
-    {
-    name: 'Varningsljud',
-    pic: owl
-    }
-
-
-
-]
+import { Categories } from "../Categories";
 
 function createCategoryCard(cardData) {
     
@@ -73,10 +28,11 @@ function createCategoryCard(cardData) {
 
 function CategoryPage (){
 
+
     return(
         <div>
             <h1>Kategorier</h1>
-            { createCategoryCards(categories)}
+            { createCategoryCards(Categories)}
 
            
         </div>

@@ -2,12 +2,17 @@ import React ,{useEffect, useState } from "react"
 import axios from 'axios'
 import Card from "./GuessCard"
 import Sound from "react-sound"
+import {components} from "react-select"
+
+
+//let categories = require('../Categories')
 
 function GuessPage (props){
     const [cards, setCards] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
     const [correctCard, setCorrectCard] = useState(undefined)
     const [isPlaying,setIsPlaying] = useState(false);
+
     const numberOfCards = 4
   
     useEffect(() => {
@@ -40,8 +45,11 @@ function GuessPage (props){
       return <div>Loading...</div>;
     }
 
+    
     return (
       <div className="row">
+        
+        
              {createCards(cards)} 
              <Sound
                 url = {correctCard ? correctCard.sound : ''}
@@ -50,6 +58,7 @@ function GuessPage (props){
                 }
                 playFromPosition={0}
               />
+              
       </div>
       );
   

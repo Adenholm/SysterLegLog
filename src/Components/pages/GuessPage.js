@@ -42,21 +42,24 @@ function GuessPage (props){
 
     return (
       <div className="row">
-             {createCards(cards)} 
-             <Sound
-                url = {correctCard ? correctCard.sound : ''}
-                playStatus = {
-                  isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED
-                }
-                playFromPosition={0}
-              />
+        <button onClick={fetchCards}>
+          Nästa
+        </button>   
+        
+        {createCards(cards)} 
 
-              
-              <button className= "btn" onClick={() => setIsPlaying(!isPlaying)} >
-              Spela igen
-              </button>
-               
-              
+        <Sound
+          url = {correctCard ? correctCard.sound : ''}
+          playStatus = {
+            isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED
+          }
+          playFromPosition={0}
+        />
+
+        
+        <button className= "btn" onClick={() => setIsPlaying(!isPlaying)} >
+        Spela igen
+        </button>   
       </div>
       
       );

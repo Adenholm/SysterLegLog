@@ -16,10 +16,7 @@ function StartPage (){
             <li className="item">
                 <Link to = "/GuessGame" className="link">Lyssna och Gissa</Link>
             </li>
-            <li className="item">
-                <Link to = "/Settings" className="link">Inställningar</Link>
-            </li>
-            
+        
                       
         </ul>
         

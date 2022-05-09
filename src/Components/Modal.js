@@ -3,23 +3,34 @@ import Sound from "react-sound";
 
 
 import closeicon from './icons/cross.png';
-import {useState} from 'react';
+import {useState,useEffect,useRef} from 'react';
 
 
 
-//import computerKeyboard from "./sounds/Computer-keyboard.wav";
-//import cat from "./sounds/cat.wav";
+//ref={menuRef} ligger nere i html 
+
+
 
 
 const Modal =({setIsOpen,props}) =>{
+    let menuRef = useRef();
+    useEffect(() => {
+        document.addEventListener("mousedown",(event) => {
+            if(!menuRef.current.contains(event.target)){
+                setIsOpen(false)
+            }
+            
+        })
+    });
     const [isPlaying,setIsPlaying] = useState(true);
     return(
-        <div id="modal">
+       
+       <div id="modal">
             <img src={closeicon} className="closeImg" onClick={() => setIsOpen(false)}/>
 
             
 
-            <button className= "btn" onClick={() => setIsPlaying(!isPlaying)} ><img src={props.img} className="bigPhoto"/></button>
+            <button className= "btn" ref={menuRef} onClick={() => setIsPlaying(!isPlaying)} ><img src={props.img} className="bigPhoto"/></button>
             <Sound
 
                 url = {props.sound}

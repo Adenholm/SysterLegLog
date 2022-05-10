@@ -5,7 +5,6 @@ import Sound from "react-sound"
 import {Link} from "react-router-dom";
 
 function GuessPage (props){
-    <button><Link to = {-1}>Tillbaka</Link></button>
     const [cards, setCards] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
     const [correctCard, setCorrectCard] = useState(undefined)
@@ -44,6 +43,8 @@ function GuessPage (props){
 
     return (
       <div>
+        <button><Link to = {-1}>Tillbaka</Link></button>
+        
         <button onClick={fetchCards}>
           Nästa
         </button>

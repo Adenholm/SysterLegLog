@@ -5,19 +5,20 @@ import Slider from '@mui/material/Slider';
 
 
   
-  export default function DiscreteSlider() {
+  export default function DiscreteSlider(props) {
     return (
       <Box sx={{ width: 300 }}>
         <Slider
           aria-label="Temperature"
-          defaultValue={30}
+          defaultValue={4}
           valueLabelDisplay="auto"
           step={1}
           marks
-          min={1}
-          max={100}
+          min={2}
+          max={8}
+          onChange = {(e, val) => props.onChangeHandler(val)}
         />
-        <Slider defaultValue={30} step={1} marks min={1} max={100} disabled />
+      
       </Box>
     );
   }

@@ -1,10 +1,8 @@
 import "./Modal.css"
 import Sound from "react-sound";
 
-
-import closeicon from './icons/cross.png';
 import {useState,useEffect,useRef} from 'react';
-
+import closeicon from "../../Components/icons/cross.png"
 
 
 //ref={menuRef} ligger nere i html 

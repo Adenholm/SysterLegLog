@@ -3,13 +3,15 @@ import axios from 'axios'
 import Card from "./GuessCard"
 import Sound from "react-sound"
 import {Link} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function GuessPage (props){
+    const location = useLocation();
     const [cards, setCards] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
     const [correctCard, setCorrectCard] = useState(undefined)
     const [isPlaying,setIsPlaying] = useState(true);
-    const numberOfCards = 4
+    const numberOfCards = location.state.numCards
   
     useEffect(() => {
       fetchCards()

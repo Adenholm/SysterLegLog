@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from 'react-router-dom';
 import Checkbox from "../Checkbox";
 import { Categories } from "../Categories";
 
 function GuessSettings (){
     //array with individual states for each checkbox to keep track of which checkboxes are checked or not
     const states = []
+    //var that keeps track on where each category has its state
     var i = -1;
 
     function createCheckbox(cardData) {
@@ -19,16 +20,18 @@ function GuessSettings (){
                 />
         )
     }
+    const navigate = useNavigate();
+    const toGuessGame = () => {
+        navigate('/GuessPage',{state:{categoryStates:states}});
+    }
      
     return(
         //create checkboxes from all categories
         <div>
             {Categories.map(createCheckbox)}
-            <li>
-            <Link to = "/GuessPage" className="link">Play</Link>    
-            </li>
-            <button onClick={() => console.log(states)}>
-                pls work
+            
+            <button onClick={()=>{toGuessGame()}}>
+                Play
             </button>
         
         </div>

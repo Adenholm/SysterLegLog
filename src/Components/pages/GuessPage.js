@@ -3,15 +3,16 @@ import axios from 'axios'
 import Card from "./GuessCard"
 import Sound from "react-sound"
 import {components} from "react-select"
+import { Categories } from "../Categories";
+import { useLocation } from 'react-router-dom'
 
-
-//let categories = require('../Categories')
 
 function GuessPage (props){
     const [cards, setCards] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
     const [correctCard, setCorrectCard] = useState(undefined)
     const [isPlaying,setIsPlaying] = useState(false);
+    const location = useLocation();
 
     const numberOfCards = 4
   
@@ -45,11 +46,30 @@ function GuessPage (props){
       return <div>Loading...</div>;
     }
 
+    //makes an array of objects with all the categories which states are true
+    function joinArrays (states){
+      var result = []
+      var currentState
+      var currentCat
+      for (var i= 0;i<states.length;i++){
+        currentCat = Categories[i].name
+        currentState = states[i]
+        if(currentState== true){
+          result.push({
+            cat: {currentCat},
+            state: {currentState}
+          })
+
+        }
+        
+      }
+      return result
+
+    }
+
     
     return (
-      <div className="row">
-        
-        
+      <div className="row">        
              {createCards(cards)} 
              <Sound
                 url = {correctCard ? correctCard.sound : ''}

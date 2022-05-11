@@ -62,5 +62,24 @@ exports.cardsCategory = async (req, res) => {
      
 }
 
+exports.multipleCategories = async (req, res) => {
+    var arr = req.body.json_data
+    var parsedArr = JSON.parse(arr)
+    console.log(parsedArr)
+    knex('cards')
+    .whereIn('categoryId',parsedArr)
+     // if successful:
+    .then(userData => {
+        // send cards from database
+        res.json(userData)
+    })
+    // if unsuccessful:
+    .catch(err => {
+        //send error message
+
+        res.json({ message: 'There was an error retrieving the category: ' + req.params.id})
+    })
+}
+
 
 

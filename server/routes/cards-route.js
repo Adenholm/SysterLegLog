@@ -15,9 +15,8 @@ router.post('/create', cardsRoutes.cardsCreate)
 
 // add route for GET request to retrieve one categroy from cards
 router.get('/category/:id', cardsRoutes.cardsCategory)
-/*router.get('/category/:categoryId', function (req,res) {
-                              cardsRoutes.cardsCategory(req,res)
-                            });*/
+
+router.post('/guess', cardsRoutes.multipleCategories)
 
 
 

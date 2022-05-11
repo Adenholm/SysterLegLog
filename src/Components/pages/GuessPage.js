@@ -5,6 +5,7 @@ import Sound from "react-sound"
 import {components} from "react-select"
 import { Categories } from "../Categories";
 import { useLocation } from 'react-router-dom'
+var qs = require('qs');
 
 
 function GuessPage (props){
@@ -20,11 +21,21 @@ function GuessPage (props){
       fetchCards()
     },[])
 
+    /*
+    arr: {catStats}
+          },
+          paramsSerializer: params => {
+            return qs.stringify(params)
+          }*/
     
     const fetchCards = async () => {
       //send get request to cards/all
+      let catStats = getCurrentCategories(location.state.categoryStates)
+      let jsonArr = JSON.stringify(catStats)
+      let post_data = {json_data:jsonArr}
+      
       axios
-        .get('http://localhost:4001/cards/all')
+        .post('http://localhost:4001/cards/guess', post_data)
         .then(response => {
           let randomCards = response.data.sort(() => Math.random() - Math.random()).slice(0, numberOfCards)
           let choosenCard = randomCards[Math.floor(Math.random() * randomCards.length)]
@@ -46,8 +57,8 @@ function GuessPage (props){
       return <div>Loading...</div>;
     }
 
-    //makes an array of objects with all the categories which states are true
-    function joinArrays (states){
+    //makes an array with all the categories which states are true
+    function getCurrentCategories (states){
       var result = []
       var currentState
       var currentCat
@@ -55,10 +66,7 @@ function GuessPage (props){
         currentCat = Categories[i].name
         currentState = states[i]
         if(currentState== true){
-          result.push({
-            cat: {currentCat},
-            state: {currentState}
-          })
+          result.push(currentCat)
 
         }
         
@@ -66,10 +74,9 @@ function GuessPage (props){
       return result
 
     }
-
     
     return (
-      <div className="row">        
+      <div className="row">      
              {createCards(cards)} 
              <Sound
                 url = {correctCard ? correctCard.sound : ''}

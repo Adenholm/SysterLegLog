@@ -61,4 +61,7 @@
   font-family: planewalker;
   font-size: xx-large;
   text-align: center;
+
+  margin-top: 0;
+  padding-top: 16px;
 }

@@ -31,6 +31,8 @@ function CategoryPage (){
 
     return(
         <div>
+            <button><Link to = {-1}>Tillbaka</Link></button>
+            
             <h1>Kategorier</h1>
             { createCategoryCards(Categories)}
 

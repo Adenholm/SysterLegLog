@@ -1,21 +1,16 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Link
-  } from 'react-router-dom';
-  import StartPage from './pages/StartPage';
-  import Categori1 from './pages/CardPage';
-  import Settings from './pages/Settings';
-import CardPage from './pages/CardPage';
-import CategoryCard from './CategoryCard';
-import CategoryPage from './pages/CategoryPage';
-import GuessSettings from './pages/GuessSettings';
-import GuessPage from './pages/GuessPage';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import StartPage from './pages/StartPage';
+import Settings from './pages/Categories/Settings';
+import CardPage from './pages/Categories/CardPage';
+import CategoryPage from './pages/Categories/CategoryPage';
+import GuessSettings from './pages/GuessGame/GuessSettings';
+import GuessPage from './pages/GuessGame/GuessPage';
+
 
 
   const Pages = () => {
+    
       return (
           <Router>
               < div className = "Pages">

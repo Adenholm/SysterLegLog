@@ -51,7 +51,10 @@ export const CardGrid = (props) =>{
   return (
     <div className="row">
       {console.log(cards)}
-      { createCards(cards)}
+      { cards.map(cardData => <Card 
+        img = {cardData.pic} 
+        sound = {cardData.sound}
+      />)}
            
 
     </div>

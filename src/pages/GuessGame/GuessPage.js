@@ -4,6 +4,7 @@ import Card from "./GuessCard";
 import Sound from "react-sound";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { Categories } from "../../Components/Categories";
 
 function GuessPage(props) {
   const location = useLocation();
@@ -17,30 +18,64 @@ function GuessPage(props) {
     fetchCards();
   }, []);
 
-  const fetchCards = async () => {
-    //send get request to cards/all
-    axios
-      .get("http://localhost:4001/cards/all")
-      .then((response) => {
-        let randomCards = response.data
-          .sort(() => Math.random() - Math.random())
-          .slice(0, numberOfCards);
-        let choosenCard =
-          randomCards[Math.floor(Math.random() * randomCards.length)];
-        choosenCard.isCorrect = true;
+  function allCategoryNames(){
+    return Categories.slice(1).map(category => category.name)
+  }
 
-        console.log(randomCards);
-        setCards(randomCards);
-        console.log(choosenCard);
-        setCorrectCard(choosenCard);
-        setIsPlaying(true);
-        setIsLoaded(true);
-      })
-      .catch((error) => console.error("Couldnt retrieve cards: " + error));
-  };
+  const fetchCards = async () => {
+    let catStats = [];
+    //console.log(location.state.allCategories)
+    //console.log(allCategoryNames())
+
+    //if the all categories-checkbox was checked, just send all categories
+    if(location.state.allCategories==true){
+      catStats = allCategoryNames()
+
+    }
+    //if the all categories-checkbox was not checked, send the actual checked in
+    else{
+      catStats = getCurrentCategories(location.state.categoryStates)
+    }
+    //stringify the array to send as a parameter
+    let jsonArr = JSON.stringify(catStats)
+    let post_data = {json_data:jsonArr}
+    try {
+      const {data} = await axios.post('http://localhost:4001/cards/guess', post_data);
+      let randomCards = data.sort(() => Math.random() - Math.random()).slice(0, numberOfCards)
+      let choosenCard = randomCards[Math.floor(Math.random() * randomCards.length)]
+      choosenCard.isCorrect = true;
+      
+      console.log(randomCards)
+      setCards(randomCards)
+      console.log(choosenCard)
+      setCorrectCard(choosenCard)
+      setIsPlaying(true)
+      setIsLoaded(true);
+    } catch (error) {
+      console.error('Couldnt retrieve cards: ' + error)
+    }
+  }
 
   if (!isLoaded) {
     return <div>Loading...</div>;
+  }
+
+  //makes an array with all the categories which states are true
+  function getCurrentCategories (states){
+    var result = []
+    var currentState
+    var currentCat
+    var cats = allCategoryNames()
+    for (var i= 0;i<states.length;i++){
+      currentCat = cats[i]
+      currentState = states[i]
+      if(currentState== true){
+        result.push(currentCat)
+
+      }
+      
+    }
+    return result
   }
 
   return (

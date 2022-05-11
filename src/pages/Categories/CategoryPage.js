@@ -1,9 +1,9 @@
 import React from "react";
-import CategoryCard from "../CategoryCard"
+import CategoryCard from "./CategoryCard";
 
 import {Link, useNavigate} from 'react-router-dom';
 
-import { Categories } from "../Categories";
+import { Categories } from "../../Components/Categories";
 
 function createCategoryCard(cardData) {
     

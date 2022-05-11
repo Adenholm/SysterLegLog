@@ -21,18 +21,30 @@ function GuessPage (props){
       fetchCards()
     },[])
 
-    /*
-    arr: {catStats}
-          },
-          paramsSerializer: params => {
-            return qs.stringify(params)
-          }*/
-    
+    function allCategoryNames(){
+      var all = [];
+      for(var i=1;i<Categories.length;i++){
+        all.push(Categories[i].name)
+
+      }
+      return all;
+    }
+  
     const fetchCards = async () => {
-      //send get request to cards/all
-      let catStats = getCurrentCategories(location.state.categoryStates)
+      let catStats = [];
+      console.log("här är det:" + location.state.allCategories)
+      //if the all categories-checkbox was checked, just send all categories
+      if(location.state.allCategories==true){
+        catStats = allCategoryNames()
+      }
+      //if the all categories-checkbox was not checked, send the actual checked in
+      else{
+        catStats = getCurrentCategories(location.state.categoryStates)
+      }
+      //stringify the array to send as a parameter
       let jsonArr = JSON.stringify(catStats)
       let post_data = {json_data:jsonArr}
+      
       
       axios
         .post('http://localhost:4001/cards/guess', post_data)
@@ -76,7 +88,7 @@ function GuessPage (props){
     }
     
     return (
-      <div className="row">      
+      <div className="row">   
              {createCards(cards)} 
              <Sound
                 url = {correctCard ? correctCard.sound : ''}

@@ -64,9 +64,11 @@ exports.cardsCategory = async (req, res) => {
 
 exports.multipleCategories = async (req, res) => {
     var arr = req.body.json_data
+    // parse the array with category names
     var parsedArr = JSON.parse(arr)
     console.log(parsedArr)
     knex('cards')
+    //if category is in the array with current categories
     .whereIn('categoryId',parsedArr)
      // if successful:
     .then(userData => {

@@ -8,6 +8,7 @@ var onlyCategories = Categories.slice(1)
 function GuessSettings (){
     //array with individual states for each checkbox to keep track of which checkboxes are checked or not
     const states = []
+    //array with state for only the 'Alla kategorier'-checkbox (actually just a single value)
     const allCategoryState = []
     //var that keeps track on where each category has its state
     var i = -1;

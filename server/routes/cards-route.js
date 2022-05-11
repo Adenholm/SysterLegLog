@@ -16,6 +16,7 @@ router.post('/create', cardsRoutes.cardsCreate)
 // add route for GET request to retrieve one categroy from cards
 router.get('/category/:id', cardsRoutes.cardsCategory)
 
+// add route for POST requst to retrieve cards from specific categories
 router.post('/guess', cardsRoutes.multipleCategories)
 
 

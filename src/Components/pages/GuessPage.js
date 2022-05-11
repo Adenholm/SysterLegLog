@@ -42,9 +42,7 @@ function GuessPage (props){
 
     return (
       <div>
-        <button onClick={fetchCards}>
-          Nästa
-        </button>
+      
         <div className="row">
           {createCards(cards)} 
           <Sound
@@ -58,6 +56,9 @@ function GuessPage (props){
         </button>   
 
         </div>
+        <button onClick={fetchCards}>
+        Nästa
+      </button>
       </div>
       );
     

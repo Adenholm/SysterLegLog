@@ -9,6 +9,8 @@ import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers';
 import Card from "./Components/Card"
 import Pages from './Components/Pages';
 
+import './App.css';
+
 
 
 function App() {

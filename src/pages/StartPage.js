@@ -1,6 +1,4 @@
 import React from "react";
-import CategoryCard from '../CategoryCard';
-import owl from "../images/owl.jpg"
 import {Link} from 'react-router-dom';
 import '../Pages.css';
 

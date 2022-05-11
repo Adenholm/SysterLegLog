@@ -1,12 +1,16 @@
 import React from "react";
-import CardGrid from "../CardGrid";
+import CardGrid from "./CardGrid";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 function CardPage(){
   const location = useLocation();
    
     return (
       <div>
+        <button><Link to = {-1}>Tillbaka</Link></button>
+        
       <h1>{location.state.category}</h1>
 
     <div className="row">

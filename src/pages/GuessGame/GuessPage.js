@@ -80,6 +80,7 @@ function createCards(images) {
     return images.map(cardData => {return <Card 
         img = {cardData.pic} 
         isCorrect = {cardData.isCorrect}
+        key = {cardData.id}
         />;});
 }
 

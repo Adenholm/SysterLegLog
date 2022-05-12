@@ -11,8 +11,8 @@ const Card = (props) => {
         
     }
     return(
-        <div className="cardSize">   
-        <div className={style}>
+        <div className="cardSize" key = {props.key}>   
+            <div className={style}>
             <button onClick={changeStyle}>
                 <img src={props.img} className="photo"/> 
             </button>  

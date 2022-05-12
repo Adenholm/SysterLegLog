@@ -1,0 +1,16 @@
+.search{
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.inputRounded .MuiOutlinedInput-root{
+    border-radius: 50px;
+    background-color: white;
+}
+
+.searchWrapper{
+    display: block;
+    align-items: center;
+}

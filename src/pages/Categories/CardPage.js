@@ -2,6 +2,7 @@ import React from "react";
 import CardGrid from "./CardGrid";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 
 function CardPage(){
@@ -16,6 +17,7 @@ function CardPage(){
     <div className="row">
           <div className="col-sm-12 text-center">
             <div className="container">
+            <SearchBar/>
               < CardGrid 
                 category = {location.state.category}
               />

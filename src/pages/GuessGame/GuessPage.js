@@ -25,10 +25,14 @@ function GuessPage (props){
         .then(response => {
           let randomCards = response.data.sort(() => Math.random() - Math.random()).slice(0, numberOfCards)
           let choosenCard = randomCards[Math.floor(Math.random() * randomCards.length)]
+          /*for(var i=0;i<randomCards.length;i++){
+            randomCards[i].isCorrect = false
+          }
+          */
           choosenCard.isCorrect = true;
           
           console.log(randomCards)
-          setCards(randomCards)
+          setCards(createCards(randomCards))
           console.log(choosenCard)
           setCorrectCard(choosenCard)
           setIsPlaying(true)
@@ -51,7 +55,7 @@ function GuessPage (props){
           Nästa
         </button>
         <div className="row">
-          {createCards(cards)} 
+          {cards} 
           <Sound
             url = {correctCard ? correctCard.sound : ''}
             playStatus = {isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
@@ -71,6 +75,8 @@ function GuessPage (props){
 
 
 function createCards(images) {
+  console.log("images"+images)
+  images.map(cardData => {console.log(cardData.isCorrect)})
     return images.map(cardData => {return <Card 
         img = {cardData.pic} 
         isCorrect = {cardData.isCorrect}

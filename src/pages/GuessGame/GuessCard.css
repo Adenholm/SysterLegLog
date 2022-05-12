@@ -1,0 +1,14 @@
+#border{
+    border: solid;
+    border-color: gray;
+}
+
+.greenCard{
+    border: solid;
+    border-color: green;
+}
+
+.blackCard {
+    border: solid;
+    border-color: black;
+}

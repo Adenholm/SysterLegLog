@@ -6,14 +6,15 @@ import CardPage from './pages/Categories/CardPage';
 import CategoryPage from './pages/Categories/CategoryPage';
 import GuessSettings from './pages/GuessGame/GuessSettings';
 import GuessPage from './pages/GuessGame/GuessPage';
-
-
+import Header from './Layouts/Header.js'
+import './App.css';
 
   const Pages = () => {
     
       return (
           <Router>
               < div className = "Pages">
+                {Header()}
                   <Routes>
                       <Route exact path= '/' element ={< StartPage/>}></Route>
                       <Route exact path= '/Cards' element ={< CardPage/>}></Route>

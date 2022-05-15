@@ -1,14 +1,16 @@
 import React from "react";
 import closeicon from "../Components/icons/cross.png"
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import "./Header.css"
 
 const Header = (props) => {
     return(
         <div className="header">            
-            <h1 className = "logo">
-                LegLoggen
-            </h1>
+            <Link to = "/"  className = "logo">
+                <h1>
+                    LegLoggen
+                </h1>    
+            </Link>
             <div className="buttonContainer">
                 <li className="menuButton">
                     <Link to = "/CategoryPage" className="headerLink">

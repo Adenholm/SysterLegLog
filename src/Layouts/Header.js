@@ -1,6 +1,7 @@
 import React from "react";
 import closeicon from "../Components/icons/cross.png"
 import {Link} from 'react-router-dom';
+import "./Header.css"
 
 const Header = (props) => {
     return(
@@ -8,17 +9,17 @@ const Header = (props) => {
             <h1 className = "logo">
                 LegLoggen
             </h1>
-            <div>
-            <li className="menuButton">
-                <Link to = "/CategoryPage" className="link">
-                    Klicka och Lyssna
-                </Link>
-            </li>
-            <li className="menuMutton">
-                <Link to = "/GuessGame" className="link">
-                    Lyssna och Gissa
-                </Link>
-            </li>
+            <div className="buttonContainer">
+                <li className="menuButton">
+                    <Link to = "/CategoryPage" className="headerLink">
+                        Klicka och Lyssna
+                    </Link>
+                </li>
+                <li className="menuButton">
+                    <Link to = "/GuessGame" className="headerLink">
+                        Lyssna och Gissa
+                    </Link>
+                </li>
             </div>
         </div>
     );

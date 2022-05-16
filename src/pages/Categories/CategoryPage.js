@@ -4,6 +4,8 @@ import CategoryCard from "./CategoryCard";
 import {Link, useNavigate} from 'react-router-dom';
 
 import { Categories } from "../../Components/Categories";
+import SearchBar from "./SearchBar";
+import { useState } from "react";
 
 function createCategoryCard(cardData) {
     

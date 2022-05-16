@@ -29,7 +29,6 @@ function createCategoryCard(cardData) {
 
 
 function CategoryPage (){
-  const [isEmpty, setIsEmpty] = useState(true)
 
 
     return(
@@ -37,9 +36,6 @@ function CategoryPage (){
             <button><Link to = {-1}>Tillbaka</Link></button>
             
             <h1>Kategorier</h1>
-            <SearchBar
-              setIsEmpty = {setIsEmpty}
-              />
             { createCategoryCards(Categories)}
 
            

@@ -85,7 +85,7 @@ exports.multipleCategories = async (req, res) => {
 
 exports.searchCard = async (req,res) => {
     knex('cards')
-    .where({name: req.params.name}) // select one category
+    .where('cards.name','like',`%${req.params.name}%`) // select one category
    
     // if successful:
     .then(userData => {

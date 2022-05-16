@@ -15,9 +15,12 @@ router.post('/create', cardsRoutes.cardsCreate)
 
 // add route for GET request to retrieve one categroy from cards
 router.get('/category/:id', cardsRoutes.cardsCategory)
-/*router.get('/category/:categoryId', function (req,res) {
-                              cardsRoutes.cardsCategory(req,res)
-                            });*/
+
+// add route for POST requst to retrieve cards from specific categories
+router.post('/guess', cardsRoutes.multipleCategories)
+
+//add route for GET request to retrieve card/cards that matches a string
+router.get('/search/:name', cardsRoutes.searchCard)
 
 
 

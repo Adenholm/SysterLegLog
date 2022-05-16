@@ -4,7 +4,6 @@ import DiscreteSlider from "./NumberCardsButton";
 
 
 
-
 function GuessSettings (){
     const [numberOfCards, setNumberOfCards] = useState(4)
     const navigate = useNavigate();

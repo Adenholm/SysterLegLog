@@ -76,10 +76,11 @@ function GuessPage (props){
 
 function createCards(images) {
   console.log("images"+images)
-  images.map(cardData => {console.log(cardData.isCorrect)})
+  images.map(cardData => {console.log("carddataid"+cardData.id)})
     return images.map(cardData => {return <Card 
         img = {cardData.pic} 
         isCorrect = {cardData.isCorrect}
+        id = {cardData.id}
         key = {cardData.id}
         />;});
 }

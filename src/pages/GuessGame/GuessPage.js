@@ -17,10 +17,6 @@ function GuessPage(props) {
   const [isPlaying, setIsPlaying] = useState(true);
   const numberOfCards = location.state.numCards;
 
-  useEffect(() => {
-    fetchCards();
-  }, []);
-
   const fetchCards = async () => {
     //send get request to cards/all
     axios
@@ -31,10 +27,14 @@ function GuessPage(props) {
           .slice(0, numberOfCards);
         let choosenCard =
           randomCards[Math.floor(Math.random() * randomCards.length)];
+        /*for(var i=0;i<randomCards.length;i++){
+            randomCards[i].isCorrect = false
+          }
+          */
         choosenCard.isCorrect = true;
 
         console.log(randomCards);
-        setCards(randomCards);
+        setCards(createCards(randomCards));
         console.log(choosenCard);
         setCorrectCard(choosenCard);
         setIsPlaying(true);
@@ -67,16 +67,34 @@ function GuessPage(props) {
         <button className="btnReplay" onClick={() => setIsPlaying(!isPlaying)}>
           Lyssna igen
         </button>
+        <div className="row">
+          {cards}
+          <Sound
+            url={correctCard ? correctCard.sound : ""}
+            playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
+            playFromPosition={0}
+          />
 
-        <img src={confetti} className="confetti" />
+          <img src={confetti} className="confetti" />
+        </div>
       </div>
     </div>
   );
 }
 
 function createCards(images) {
+  console.log("images" + images);
+  images.map((cardData) => {
+    console.log(cardData.isCorrect);
+  });
   return images.map((cardData) => {
-    return <Card img={cardData.pic} isCorrect={cardData.isCorrect} />;
+    return (
+      <Card
+        img={cardData.pic}
+        isCorrect={cardData.isCorrect}
+        key={cardData.id}
+      />
+    );
   });
 }
 

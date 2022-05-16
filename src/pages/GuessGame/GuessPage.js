@@ -103,9 +103,14 @@ function GuessPage(props) {
 }
 
 function createCards(images) {
-  return images.map((cardData) => {
-    return <Card img={cardData.pic} isCorrect={cardData.isCorrect} />;
-  });
+  console.log("images"+images)
+  images.map(cardData => {console.log("carddataid"+cardData.id)})
+    return images.map(cardData => {return <Card 
+        img = {cardData.pic} 
+        isCorrect = {cardData.isCorrect}
+        id = {cardData.id}
+        key = {cardData.id}
+        />;});
 }
 
 export default GuessPage;

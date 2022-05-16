@@ -6,8 +6,8 @@
   border-radius: 1rem;
   }
 
-.photo{
-  height: 20em;
-  width: 15em;
+.cardPhoto{
+  height: 20rem;
+  width: 15rem;
   object-fit: cover;
 }

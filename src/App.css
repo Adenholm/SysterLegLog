@@ -1,6 +1,5 @@
-
 #root {
-  height: 100vh;
+  min-height: 100vh;
 }
 .App-header {
   background-color: #282c34;
@@ -18,11 +17,16 @@
 }
 
 .container {
-  background-color: #D0E4F5;
   left: 100%;
-  height: 100%;
-  
+  min-height: 100vh;
+
+  background: #dcf1f4;
+  background: -moz-linear-gradient(left, #dcf1f4 0%, #ebf0f6 50%, #ecfeff 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #dcf1f4 0%,
+    #ebf0f6 50%,
+    #ecfeff 100%
+  );
+  background: linear-gradient(to right, #dcf1f4 0%, #ebf0f6 50%, #ecfeff 100%);
 }
-
-
-

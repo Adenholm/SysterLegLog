@@ -6,6 +6,7 @@ import CardPage from './pages/Categories/CardPage';
 import CategoryPage from './pages/Categories/CategoryPage';
 import GuessSettings from './pages/GuessGame/GuessSettings';
 import GuessPage from './pages/GuessGame/GuessPage';
+import GuessSound from './pages/GuessSoundGame/GuessSound'
 
 
 
@@ -21,6 +22,7 @@ import GuessPage from './pages/GuessGame/GuessPage';
                       <Route exact path= '/CategoryPage' element ={< CategoryPage/>}></Route>
                       <Route exact path= '/GuessGame' element ={< GuessSettings/>}></Route>
                       <Route exact path= '/GuessPage' element ={< GuessPage/>}></Route>
+                      <Route exact path= '/GuessSound' element ={< GuessSound/>}></Route>
                   </Routes>
 
               </div>

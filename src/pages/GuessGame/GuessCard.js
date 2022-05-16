@@ -10,10 +10,10 @@ const Card = (props) => {
         
     }
     return(
-        <div className="cardSize">  
+        <div className="card">  
             {console.log("indid"+props.id)} 
             <button id= {props.id} onClick={changeStyle}>
-                <img src={props.img} className="photo"/> 
+                <img src={props.img} className="cardPhoto"/> 
             </button>  
         
                 

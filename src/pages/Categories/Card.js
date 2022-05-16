@@ -9,7 +9,7 @@ const Card = (props) => {
     return(
         <div className="card">
             
-            <img src={props.img} className="photo" onClick={() => setIsOpen(true)}/>            
+            <img src={props.img} className="cardPhoto" onClick={() => setIsOpen(true)}/>            
             
             {isOpen && (
                 <Modal 

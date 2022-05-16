@@ -12,7 +12,7 @@ const CategoryCard = (props) => {
         
             <div onClick={()=>{toCardPage()}} className="cardBody">
                 
-                <button className = "categoryBtn">
+                <button className = "cardBtn">
                     <img src={props.img} className= "photo"/> 
                     <div className="container">
                         <h2><b>{props.title}</b></h2>

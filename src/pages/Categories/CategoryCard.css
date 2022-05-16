@@ -1,22 +1,27 @@
 .cardBody{
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 50px;
-  width: 200px;
-  margin: '10px 5px 0px 5px';
+  padding: 2rem 1rem;
+  width: 16rem;
+  margin: 1rem 1rem;
   display: inline;
-  border-radius: 0rem;
   }
 
+.row {
+  align-items: center;
+}
+
 .photo{
-  max-height: 400px;
-  max-width: 400px;
+  height: 13rem;
+  width: 100%;
+  border-top-left-radius: 1rem ;
+  border-top-right-radius: 1rem ;
+  object-fit: cover;
 }
 
 .cardBtn {
   cursor: pointer;
-  border-radius: 0rem;
+  border-radius: 1rem;
+  padding: 0;
+  width: 16rem;
 }
 .frame {
     padding-top: 1px;

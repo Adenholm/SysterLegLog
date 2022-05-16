@@ -14,9 +14,7 @@ const CategoryCard = (props) => {
                 
                 <button className = "cardBtn">
                     <img src={props.img} className= "photo"/> 
-                    <div className="container">
                         <h2><b>{props.title}</b></h2>
-                    </div>
                 </button> 
             </div>
 

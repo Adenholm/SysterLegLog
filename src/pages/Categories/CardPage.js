@@ -3,10 +3,15 @@ import CardGrid from "./CardGrid";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import { useState } from "react";
 
 
 function CardPage(){
   const location = useLocation();
+  //states for searchbar
+  const [inputText, setInputText] = useState("");
+
+
    
     return (
       <div>
@@ -17,9 +22,13 @@ function CardPage(){
     <div className="row">
           <div className="col-sm-12 text-center">
             <div className="container">
-            <SearchBar/>
+            <SearchBar
+                setInputText = {p => {setInputText(p)}}
+                inputText = {inputText}
+                />
               < CardGrid 
                 category = {location.state.category}
+                inputText = {inputText}
               />
             </div>
           </div>

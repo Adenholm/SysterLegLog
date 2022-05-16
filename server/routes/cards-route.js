@@ -19,6 +19,9 @@ router.get('/category/:id', cardsRoutes.cardsCategory)
 // add route for POST requst to retrieve cards from specific categories
 router.post('/guess', cardsRoutes.multipleCategories)
 
+//add route for GET request to retrieve card/cards that matches a string
+router.get('/search/:name', cardsRoutes.searchCard)
+
 
 
 /*

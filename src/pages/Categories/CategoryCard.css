@@ -6,6 +6,7 @@
   width: 200px;
   margin: '10px 5px 0px 5px';
   display: inline;
+  border-radius: 0rem;
   }
 
 .photo{
@@ -13,8 +14,9 @@
   max-width: 400px;
 }
 
-.cardButton {
+.cardBtn {
   cursor: pointer;
+  border-radius: 0rem;
 }
 .frame {
     padding-top: 1px;

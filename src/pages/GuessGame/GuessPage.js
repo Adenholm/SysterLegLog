@@ -14,6 +14,7 @@ function GuessPage(props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [correctCard, setCorrectCard] = useState(undefined);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [nextCards, setNextCards] = useState(false); //for the guessCard to know when grid is updated
   const numberOfCards = location.state.numCards;
 
   useEffect(() => {
@@ -46,6 +47,9 @@ function GuessPage(props) {
       let randomCards = data.sort(() => Math.random() - Math.random()).slice(0, numberOfCards)
       let choosenCard = randomCards[Math.floor(Math.random() * randomCards.length)]
       choosenCard.isCorrect = true;
+
+      //to notify guesscards
+      setNextCards(!nextCards)
       
       console.log(randomCards)
       setCards(randomCards)
@@ -80,6 +84,18 @@ function GuessPage(props) {
     return result
   }
 
+  function createCards(images) {
+    console.log("images"+images)
+    images.map(cardData => {console.log("carddataid"+cardData.id)})
+      return images.map(cardData => {return <Card 
+          img = {cardData.pic} 
+          isCorrect = {cardData.isCorrect}
+          nextCards = {nextCards}
+          id = {cardData.id}
+          key = {cardData.id}
+          />;});
+  }
+
   return (
     <div>
       <button>
@@ -104,15 +120,6 @@ function GuessPage(props) {
   );
 }
 
-function createCards(images) {
-  console.log("images"+images)
-  images.map(cardData => {console.log("carddataid"+cardData.id)})
-    return images.map(cardData => {return <Card 
-        img = {cardData.pic} 
-        isCorrect = {cardData.isCorrect}
-        id = {cardData.id}
-        key = {cardData.id}
-        />;});
-}
+
 
 export default GuessPage;

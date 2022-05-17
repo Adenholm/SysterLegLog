@@ -8,6 +8,7 @@ import Sound from "react-sound";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "./GuessPage.css";
+import CorrectGuessModal from "./CorrectGuessModal.js";
 
 function GuessPage(props) {
   const location = useLocation();
@@ -16,6 +17,10 @@ function GuessPage(props) {
   const [correctCard, setCorrectCard] = useState(undefined);
   const [isPlaying, setIsPlaying] = useState(true);
   const numberOfCards = location.state.numCards;
+
+  useEffect(() => {
+    fetchCards();
+  }, []);
 
   const fetchCards = async () => {
     //send get request to cards/all
@@ -67,6 +72,17 @@ function GuessPage(props) {
         <button className="btnReplay" onClick={() => setIsPlaying(!isPlaying)}>
           Lyssna igen
         </button>
+        <button
+          className="btnReplay"
+          onClick={() => (
+            <button
+              className="btnReplay"
+              onClick={() => <CorrectGuessModal setIsOpen={setIsOpen} />}
+            >
+              CONFETTI!
+            </button>
+          )}
+        ></button>
         <div className="row">
           {cards}
           <Sound

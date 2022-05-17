@@ -5,6 +5,8 @@ import Sound from "react-sound";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Categories } from "../../Components/Categories";
+import "../Grid.css"
+import Grid from '@mui/material/Grid';
 
 function GuessPage(props) {
   const location = useLocation();
@@ -85,18 +87,18 @@ function GuessPage(props) {
       </button>
 
       <button onClick={fetchCards}>Nästa</button>
-      <div className="row">
+      <Grid container className = "row">
         {createCards(cards)}
         <Sound
           url={correctCard ? correctCard.sound : ""}
           playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
           playFromPosition={0}
         />
+      </Grid>
 
         <button className="btn" onClick={() => setIsPlaying(!isPlaying)}>
           Spela igen
         </button>
-      </div>
       <button onClick={fetchCards}>Nästa</button>
     </div>
   );

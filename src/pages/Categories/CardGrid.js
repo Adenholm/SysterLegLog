@@ -1,6 +1,9 @@
 import React ,{useEffect, useState } from "react";
 import Card from "./Card";
 import axios from 'axios'
+import "../Grid.css"
+import Grid from '@mui/material/Grid';
+
 
 function createCard(cardData) {
 
@@ -66,15 +69,15 @@ export const CardGrid = (props) =>{
     
   }
   return (
-    <div className="row">
-      {console.log(cards)}
+    <div>
+      <Grid container className="row">
+        {console.log(cards)}
 
-      { cards.map(cardData => <Card 
-        img = {cardData.pic} 
-        sound = {cardData.sound}
-      />)}
-           
-
+        { cards.map(cardData => <Card 
+          img = {cardData.pic} 
+          sound = {cardData.sound}
+        />)}
+      </Grid>    
     </div>
     );
 

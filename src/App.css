@@ -23,10 +23,17 @@
   color: #61dafb;
 }
 
-.container {
+.pages-background {
   background-color: var(--bg-color);
   left: 100%;
   height: 100%;
+}
+
+.pages {
+  background-color: var(--bg-color);
+  left: 100%;
+  height: 100%;
+  padding: 2rem 10%;
 }
 
 button {
@@ -34,7 +41,7 @@ button {
     text-align: center;
     padding: 0.5rem 1.1rem;
     margin: 0.5rem 0.5rem;
-    border-radius: 5rem;
+    border-radius: 2rem;
     border: 0;
     background-color: var(--btn-color);
 

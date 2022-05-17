@@ -13,17 +13,18 @@ import './App.css';
     
       return (
           <Router>
-              < div className = "Pages">
+              <div className='pagesBackground'>
                 {Header()}
-                  <Routes>
-                      <Route exact path= '/' element ={< StartPage/>}></Route>
-                      <Route exact path= '/Cards' element ={< CardPage/>}></Route>
-                      <Route exact path= '/Settings' element ={< Settings/>}></Route>
-                      <Route exact path= '/CategoryPage' element ={< CategoryPage/>}></Route>
-                      <Route exact path= '/GuessGame' element ={< GuessSettings/>}></Route>
-                      <Route exact path= '/GuessPage' element ={< GuessPage/>}></Route>
-                  </Routes>
-
+                <div className = "pages">
+                    <Routes>
+                        <Route exact path= '/' element ={< StartPage/>}></Route>
+                        <Route exact path= '/Cards' element ={< CardPage/>}></Route>
+                        <Route exact path= '/Settings' element ={< Settings/>}></Route>
+                        <Route exact path= '/CategoryPage' element ={< CategoryPage/>}></Route>
+                        <Route exact path= '/GuessGame' element ={< GuessSettings/>}></Route>
+                        <Route exact path= '/GuessPage' element ={< GuessPage/>}></Route>
+                    </Routes>
+                </div>
               </div>
           </Router>
       )

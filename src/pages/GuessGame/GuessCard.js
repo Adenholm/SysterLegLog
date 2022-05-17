@@ -1,6 +1,7 @@
 import "../Categories/Card.css";
 import React, { useState } from "react";
 
+
 const Card = (props) => {
     const changeStyle = () => {
         if(props.isCorrect){

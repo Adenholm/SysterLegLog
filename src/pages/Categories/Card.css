@@ -1,7 +1,6 @@
 .card{
-  padding: 5rem 3rem;
+  padding: 1.5rem 3rem;
   width: 200px;
-  margin: '10px 5px 0px 5px';
   display: inline;
   border-radius: 1rem;
   }
@@ -10,4 +9,5 @@
   height: 20rem;
   width: 15rem;
   object-fit: cover;
+  border-radius: 1rem;
 }

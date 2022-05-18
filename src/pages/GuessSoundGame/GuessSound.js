@@ -81,4 +81,10 @@ const fetchCards = async () => {
 
   
 }
+
+function createCards(images) {
+  return images.map((cardData) => {
+    return <Card img={cardData.pic} isCorrect={cardData.isCorrect} />;
+  });
+}
 export default GuessSound;

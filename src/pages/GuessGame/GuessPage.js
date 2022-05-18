@@ -18,6 +18,7 @@ function GuessPage(props) {
   const [numberOfCards, setNumberOfCards] = useState(4)
   const [categoryStates, setCategoryStates] = useState([])
   const [allCategories, setAllCategories] = useState(true)
+  const [nextCards, setNextCards] = useState(false); //for the guessCard to know when grid is updated
 
 
   useEffect(() => {
@@ -52,7 +53,10 @@ function GuessPage(props) {
       let randomCards = data.sort(() => Math.random() - Math.random()).slice(0, numberOfCards)
       let choosenCard = randomCards[Math.floor(Math.random() * randomCards.length)]
       choosenCard.isCorrect = true;
-    
+      //to notify guesscards
+      setNextCards(!nextCards)
+
+      
       setCards(randomCards)
       console.log(choosenCard)
       setCorrectCard(choosenCard)
@@ -85,24 +89,18 @@ function GuessPage(props) {
     return result
   }
 
-  /*
-  const openNav = () => {
-    console.log("opennav")
-    setIsSettingsOpen(true)
-    console.log("Mysidebar"+document.getElementById("mySidebar"))
-    console.log("flexiblepage"+document.getElementById("flexiblePage"))
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("flexiblePage").style.marginRight = "250px";
+  function createCards(images) {
+    console.log("images"+images)
+    images.map(cardData => {console.log("carddataid"+cardData.id)})
+      return images.map(cardData => {return <Card 
+          img = {cardData.pic} 
+          isCorrect = {cardData.isCorrect}
+          nextCards = {nextCards}
+          id = {cardData.id}
+          key = {cardData.id}
+          />;});
   }
-  
-  
-  const closeNav = () => {
-    setIsSettingsOpen(false)
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("flexiblePage").style.marginRight = "0";
-  } 
-  */
-  
+
   return (
     <div id="flexiblePage" style = {{marginRight: (isSettingsOpen ? "250px" : "0px")}}>
       <div>
@@ -142,14 +140,5 @@ function GuessPage(props) {
 }
 
 
-
-function createCards(images) {
-    return images.map(cardData => {return <Card 
-        img = {cardData.pic} 
-        isCorrect = {cardData.isCorrect}
-        id = {cardData.id}
-        key = {cardData.id}
-        />;});
-}
 
 export default GuessPage;

@@ -19,7 +19,6 @@ const Card = (props) => {
     }
     return(
         <div className="card">  
-            {console.log("indid"+props.id)}            
             <img 
                 src={props.img} 
                 className="cardPhoto" 

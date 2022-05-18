@@ -1,31 +1,35 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DiscreteSlider from "./NumberCardsButton";
 import Checkbox from "../../Components/Checkbox";
 import { Categories } from "../../Components/Categories";
 
+
 //array that doesn't include the 'Alla kategorier' category
 var onlyCategories = Categories.slice(1)
 
-function GuessSettings (){
-    const [numberOfCards, setNumberOfCards] = useState(4)
+function GuessSettings (props){
     const navigate = useNavigate();
+    //when clicked outside of modal, close modal
 
     //array with individual states for each checkbox to keep track of which checkboxes are checked or not
     const states = []
-    //array with state for only the 'Alla kategorier'-checkbox (actually just a single value)
-    const allCategoryState = []
+   
     //var that keeps track on where each category has its state
     var i = -1;
+   
     //function for creating the 'Alla kategorier'-checkbox
-    function createAllCatCheckbox(cardData){
+    function createCategoriesCheckbox(cardData){
         return (
-            <Checkbox
-                id = "checkbox"
-                label = {cardData.name}
-                index = {0}
-                getState = {(state,index) => allCategoryState[index]= state}
+            <div>
+                <input
+                    id="checkbox"
+                    type="checkbox"
+                    checked={props.allCategories}
+                    onChange={() => props.setAllCategories(!props.allCategories)}
                 />
+                <label htmlFor={"checkbox"}>{"Alla kategorier"}</label>
+            </div>
         )
     }
     //function for creating remaining checkboxes
@@ -37,34 +41,21 @@ function GuessSettings (){
                 label = {cardData.name}
                 index = {i}
                 getState = {(state,index) => states[index]=state}
+                setCategories = {(p) => props.setCategoryStates(p)}
+                states = {states}
                 />
         )
-    }
+    } 
 
-    const toGuessPage = () => {
-        navigate('/GuessPage',{
-            state:{
-                categoryStates:states,
-                allCategories: allCategoryState[0],
-                numCards: numberOfCards
-            }});
-    }
+    
+
     return(
-        <div>
-            <button><Link to = {-1}>Tillbaka</Link></button>
-            {createAllCatCheckbox(Categories[0])}
-            {onlyCategories.map(createCheckbox)}
-            
-            <li>
-                <DiscreteSlider 
-                    onChangeHandler = {setNumberOfCards} 
-                />
-            </li>
-            <li>
-            <button onClick={() => toGuessPage()}>Spela</button>
-            </li>
-            <button onClick={() => console.log(numberOfCards)}>Debug</button>
-        </div>
+            <div id = "mySidebar" className="sidebar" style = {{width: (props.isSettingsOpen ? "250px" : "0px")}}>
+                {console.log("states"+states)}
+                {createCategoriesCheckbox(Categories[0])}
+                {onlyCategories.map(createCheckbox)}
+                <DiscreteSlider onChangeHandler = {props.setNumberOfCards}/>
+            </div>
     )
 
 }

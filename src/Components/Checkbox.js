@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 
-const Checkbox = ({id,label,index,getState}) => {
+const Checkbox = ({id,label,index,getState,setCategories,states}) => {
     const [checked, setChecked] = useState(false);
     const onChange = () => {
-        setChecked(!checked);
-        getState(checked,index);
+        let newChecked = !checked
+        setChecked(newChecked);
+        getState(newChecked,index);
+        setCategories(states)
       };
       getState(checked,index);
     return (

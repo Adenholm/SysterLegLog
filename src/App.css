@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:wght@400;700;800&display=swap');
 
 #root {
   height: 100vh;
+  --bg-color: #D0E4F5;
+  --btn-color: white;
+  --btn-hover-color: #ebf3fa;
+  --text-color: rgb(39, 39, 39);
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -17,12 +23,41 @@
   color: #61dafb;
 }
 
-.container {
-  background-color: #D0E4F5;
+.pages-background {
+  background-color: var(--bg-color);
   left: 100%;
   height: 100%;
-  
 }
+
+.pages {
+  background-color: var(--bg-color);
+  left: 100%;
+  height: 100%;
+  padding: 2rem 10%;
+}
+
+button {
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 1.1rem;
+    margin: 0.5rem 0.5rem;
+    border-radius: 2rem;
+    border: 0rem;
+    background-color: var(--btn-color);
+
+    font-family: Nunito;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 100ms;
+  }
+
+button:hover {
+    background-color: var(--btn-hover-color);
+    cursor: pointer;
+}
+
+
+
 
 
 

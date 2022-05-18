@@ -7,9 +7,9 @@ import React, { useState } from "react";
 const Card = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     return(
-        <div className="cardSize">
+        <div className="card">
             
-            <button onClick={() => setIsOpen(true)}><img src={props.img} className="photo"/></button>                
+            <img src={props.img} className="cardPhoto" onClick={() => setIsOpen(true)}/>            
             
             {isOpen && (
                 <Modal 

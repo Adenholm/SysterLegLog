@@ -83,5 +83,22 @@ exports.multipleCategories = async (req, res) => {
     })
 }
 
+exports.searchCard = async (req,res) => {
+    knex('cards')
+    .where('cards.name','like',`%${req.params.name}%`) // select one category
+   
+    // if successful:
+    .then(userData => {
+        // send cards from database
+        res.json(userData)
+    })
+    // if unsuccessful:
+    .catch(err => {
+        //send error message
+
+        res.json({ message: 'There was an error retrieving the category: ' + req.params.id})
+    })
+}
+
 
 

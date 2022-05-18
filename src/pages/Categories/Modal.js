@@ -28,7 +28,7 @@ const Modal =({setIsOpen,props}) =>{
 
             
 
-            <button className= "btn" ref={menuRef} onClick={() => setIsPlaying(!isPlaying)} ><img src={props.img} className="bigPhoto"/></button>
+            <button className= "modalBtn" ref={menuRef} onClick={() => setIsPlaying(!isPlaying)} ><img src={props.img} className="bigPhoto"/></button>
             <Sound
 
                 url = {props.sound}

@@ -4,6 +4,11 @@ import CategoryCard from "./CategoryCard";
 import {Link, useNavigate} from 'react-router-dom';
 
 import { Categories } from "../../Components/Categories";
+import SearchBar from "./SearchBar";
+import { useState } from "react";
+
+import Grid from '@mui/material/Grid';
+import "../Grid.css"
 
 function createCategoryCard(cardData) {
     
@@ -32,11 +37,10 @@ function CategoryPage (){
     return(
         <div>
             <button><Link to = {-1}>Tillbaka</Link></button>
-            
             <h1>Kategorier</h1>
-            { createCategoryCards(Categories)}
-
-           
+            <Grid container className="row">
+              { createCategoryCards(Categories)} 
+            </Grid>
         </div>
     ) 
 }

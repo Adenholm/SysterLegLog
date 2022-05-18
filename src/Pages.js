@@ -19,8 +19,7 @@ import './App.css';
                         <Route exact path= '/' element ={< StartPage/>}></Route>
                         <Route exact path= '/Cards' element ={< CardPage/>}></Route>
                         <Route exact path= '/CategoryPage' element ={< CategoryPage/>}></Route>
-                        <Route exact path= '/GuessGame' element ={< GuessSettings/>}></Route>
-                        <Route exact path= '/GuessPage' element ={< GuessPage/>}></Route>
+                        <Route exact path= '/GuessGame' element ={< GuessPage/>}></Route>
                     </Routes>
                 </div>
               </div>

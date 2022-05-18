@@ -3,59 +3,64 @@ import axios from "axios";
 import Card from "./GuessCard";
 import Sound from "react-sound";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import { Categories } from "../../Components/Categories";
 import "../Grid.css"
 import Grid from '@mui/material/Grid';
-
+import GuessSettings from "./GuessSettings"
+import "../Settings.css"
 function GuessPage(props) {
-  const location = useLocation();
+
   const [cards, setCards] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [correctCard, setCorrectCard] = useState(undefined);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [numberOfCards, setNumberOfCards] = useState(4)
+  const [categoryStates, setCategoryStates] = useState([])
+  const [allCategories, setAllCategories] = useState(true)
   const [nextCards, setNextCards] = useState(false); //for the guessCard to know when grid is updated
-  const numberOfCards = location.state.numCards;
+
 
   useEffect(() => {
     fetchCards();
-  }, []);
+  },[categoryStates,allCategories,numberOfCards]);
+  
 
   function allCategoryNames(){
     return Categories.slice(1).map(category => category.name)
   }
 
   const fetchCards = async () => {
+    
+    console.log("allcategories"+allCategories)
     let catStats = [];
-    //console.log(location.state.allCategories)
-    //console.log(allCategoryNames())
 
     //if the all categories-checkbox was checked, just send all categories
-    if(location.state.allCategories==true){
+    if(allCategories==true || getCurrentCategories(categoryStates).length == 0){
       catStats = allCategoryNames()
 
     }
     //if the all categories-checkbox was not checked, send the actual checked in
     else{
-      catStats = getCurrentCategories(location.state.categoryStates)
+      catStats = getCurrentCategories(categoryStates)
     }
     //stringify the array to send as a parameter
     let jsonArr = JSON.stringify(catStats)
+    console.log("categorystates"+jsonArr)
     let post_data = {json_data:jsonArr}
     try {
       const {data} = await axios.post('http://localhost:4001/cards/guess', post_data);
       let randomCards = data.sort(() => Math.random() - Math.random()).slice(0, numberOfCards)
       let choosenCard = randomCards[Math.floor(Math.random() * randomCards.length)]
       choosenCard.isCorrect = true;
-
       //to notify guesscards
       setNextCards(!nextCards)
+
       
-      console.log(randomCards)
       setCards(randomCards)
       console.log(choosenCard)
       setCorrectCard(choosenCard)
-      setIsPlaying(true)
+      setIsPlaying(false)
       setIsLoaded(true);
     } catch (error) {
       console.error('Couldnt retrieve cards: ' + error)
@@ -97,25 +102,39 @@ function GuessPage(props) {
   }
 
   return (
-    <div>
-      <button>
-        <Link to={-1}>Tillbaka</Link>
-      </button>
-
-      <button onClick={fetchCards}>Nästa</button>
-      <Grid container className = "row">
-        {createCards(cards)}
-        <Sound
-          url={correctCard ? correctCard.sound : ""}
-          playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
-          playFromPosition={0}
-        />
-      </Grid>
-
-        <button className="btn" onClick={() => setIsPlaying(!isPlaying)}>
-          Spela igen
+    <div id="flexiblePage" style = {{marginRight: (isSettingsOpen ? "250px" : "0px")}}>
+      <div>
+        <button>
+          <Link to={-1}>Tillbaka</Link>
         </button>
-      <button onClick={fetchCards}>Nästa</button>
+        <button onClick={() => setIsPlaying(!isPlaying)}>
+          {!isPlaying ? "Spela Ljud" : "Stoppa ljud"}
+        </button>
+        <button onClick={fetchCards}>Nästa</button>
+        <button onClick={() => setIsSettingsOpen(!isSettingsOpen)}>
+        Inställningar
+        </button>
+        <Grid container className = "row">
+          {createCards(cards)}
+          <Sound
+            url={correctCard ? correctCard.sound : ""}
+            playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
+            playFromPosition={0}
+            />
+        </Grid>
+      </div>
+            {isSettingsOpen && (
+                     <GuessSettings 
+                         setIsSettingsOpen={setIsSettingsOpen}
+                         isSettingsOpen = {isSettingsOpen}
+                         props = {props}
+                         setNumberOfCards= {p => {setNumberOfCards(p)}}
+                         setAllCategories= {p => {setAllCategories(p)}}
+                         setCategoryStates= {p => {setCategoryStates(p)}}
+                         allCategories = {allCategories}
+                     />
+                     
+                 )}
     </div>
   );
 }

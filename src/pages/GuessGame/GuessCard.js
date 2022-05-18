@@ -22,7 +22,7 @@ const Card = (props) => {
             {console.log("indid"+props.id)}            
             <img 
                 src={props.img} 
-                className="cardPhoto" 
+                className="guessCardPhoto" 
                 id= {props.id} 
                 onClick={() => changeStyle("green")}/>        
         </div>

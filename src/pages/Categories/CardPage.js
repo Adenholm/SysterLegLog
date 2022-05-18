@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { useEffect } from "react";
+import Settings from "./Settings";
 
 
 function CardPage(){
@@ -12,6 +13,8 @@ function CardPage(){
   //states for searchbar
   const [inputText, setInputText] = useState("");
   const [headerText, setHeaderText] = useState(location.state.category)
+  const [settingsIsOpen, setSettingsIsOpen] = useState(false)
+  const [cardsize, setCardsize] = useState(1)
 
   useEffect(() =>{
     if(!(inputText==="")){
@@ -24,6 +27,10 @@ function CardPage(){
 
     return (
       <div>
+        <Settings 
+        cardsize = {cardsize}
+        setCardsize = {setCardsize}
+        />
         <button><Link to = {-1}>Tillbaka</Link></button>
         
       <h1>{headerText}</h1>
@@ -38,6 +45,7 @@ function CardPage(){
               < CardGrid 
                 category = {location.state.category}
                 inputText = {inputText}
+                cardsize = {cardsize}
               />
             </div>
           </div>

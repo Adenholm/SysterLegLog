@@ -3,25 +3,16 @@ import Card from "./Card";
 import axios from 'axios'
 import "../Grid.css"
 import Grid from '@mui/material/Grid';
+import Settings from "./Settings";
 
 
-function createCard(cardData) {
 
-    return <Card 
-      img = {cardData.pic} 
-      sound = {cardData.sound}
-      />;
-    
-  }
-  
-  function createCards(images) {
-    return images.map(createCard);
-  }
 
 
 export const CardGrid = (props) =>{
   const [cards, setCards] = useState([])
   const [loading, setLoading] = useState(true)
+ 
 
   useEffect(() => {
     fetchCards()
@@ -31,6 +22,11 @@ export const CardGrid = (props) =>{
     console.log(props.inputText,'has changed')
     fetchCards()
   },[props.inputText])
+
+  useEffect(() =>{
+    console.log(props.cardsize + 'has changed')
+    
+  },[props.cardsize])
 
   const fetchCards = () => {
     console.log("inputText:"+props.inputText)
@@ -76,6 +72,8 @@ export const CardGrid = (props) =>{
         { cards.map(cardData => <Card 
           img = {cardData.pic} 
           sound = {cardData.sound}
+          cardsize = {props.cardsize}
+          key = {cardData.id}
         />)}
       </Grid>    
     </div>

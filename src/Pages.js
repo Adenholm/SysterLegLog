@@ -23,6 +23,7 @@ import GuessSound from './pages/GuessSoundGame/GuessSound'
                         <Route exact path= '/Settings' element ={< Settings/>}></Route>
                         <Route exact path= '/CategoryPage' element ={< CategoryPage/>}></Route>
                         <Route exact path= '/GuessGame' element ={< GuessPage/>}></Route>
+                        <Route exact path= '/GuessSound' element ={< GuessSound/>}></Route>
                     </Routes>
                 </div>
               </div>

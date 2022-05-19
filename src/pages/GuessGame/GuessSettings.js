@@ -17,6 +17,7 @@ function GuessSettings (props){
                     props = {props}
                 />
 
+
                 <DiscreteSlider onChangeHandler = {props.setNumberOfCards}/>
             </div>
     )

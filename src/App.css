@@ -7,11 +7,11 @@
   --btn-hover-color: #ebf3fa;
   --text-color: rgb(39, 39, 39);
 
-  --font-header: Lobster Two;
+  --font-header: var (--font-test);
   --font-button: var(--font-test);
   --font-settings: var(--font-test);
 
-  --font-test: Asap Condensed; /* Fuzzy bubbles \^^*/ /*Tajawal  och Asap Condensed simpla: Russo One RymdKänsla*/ /*Bubblegum ftw*/ /*Mitr Tydliga mjuka bokstäver, basic*/
+  --font-test: Pirata One; /* Fuzzy bubbles \^^*/ /*Tajawal  och Asap Condensed simpla: Russo One RymdKänsla*/ /*Bubblegum ftw*/ /*Mitr Tydliga mjuka bokstäver, basic*/
 }
 
 @font-face {

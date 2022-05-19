@@ -1,15 +1,15 @@
-.cardBody{
+.cardBody {
   padding: 2rem 1rem;
   width: 16rem;
   margin: 1rem 1rem;
   display: inline;
-  }
+}
 
-.photo{
+.photo {
   height: 13rem;
   width: 100%;
-  border-top-left-radius: 1rem ;
-  border-top-right-radius: 1rem ;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   object-fit: cover;
 }
 
@@ -25,4 +25,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.categoryTitletxt {
+  font-family: var(--font-button);
 }

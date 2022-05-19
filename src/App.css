@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nunito&family=Signika+Negative&family=Tajawal&family=Russo+One&family=Lobster+Two&family=Asap+Condensed:wght@400;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Titan+One&family=Pirata+One&family=Fuzzy+Bubbles&family=Bubblegum+Sans&family=Londrina+Solid&family=Mitr&family=Abril+Fatface&family=Commissioner&family=Londrina+Outline");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Signika+Negative&family=Tajawal&family=Russo+One&family=Asap+Condensed:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Poppins&family=Titan+One&family=Pirata+One&family=Fuzzy+Bubbles&family=Bubblegum+Sans&family=Londrina+Solid&family=Mitr&family=Abril+Fatface&family=Commissioner&family=Londrina+Outline&family=Varela+Round");
 #root {
   height: 100vh;
   --bg-color: #d0e4f5;
@@ -7,11 +7,11 @@
   --btn-hover-color: #ebf3fa;
   --text-color: rgb(39, 39, 39);
 
-  --font-header: var (--font-test);
-  --font-button: var(--font-test);
+  --font-header: var(--font-test);
+  --font-button: Varela Round;
   --font-settings: var(--font-test);
 
-  --font-test: Pirata One; /* Fuzzy bubbles \^^*/ /*Tajawal  och Asap Condensed simpla: Russo One RymdKänsla*/ /*Bubblegum ftw*/ /*Mitr Tydliga mjuka bokstäver, basic*/
+  --font-test: Titan One; /* Fuzzy bubbles \^^*/ /*Tajawal  och Asap Condensed simpla: Russo One RymdKänsla*/ /*Bubblegum ftw*/ /*Mitr Tydliga mjuka bokstäver, basic*/
 }
 
 @font-face {

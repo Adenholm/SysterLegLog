@@ -13,7 +13,7 @@ const Footer = (props) => {
                         Kontakt 
                     </section>
                 </section>
-                    <a href="/" target= "_blank" rel="noopener noreferrer">systerleglog@gmail.com</a>
+                    <a href="mailto:systerleglog@gmail.com?body=" target= "_blank" rel="noopener noreferrer">systerleglog@gmail.com</a>
                
 
             </section>

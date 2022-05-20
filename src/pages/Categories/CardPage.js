@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import previous from "../../Components/icons/back.png"
 import { useNavigate } from "react-router-dom";
 import "../../App.css"
+import Settings from "./Settings";
 
 
 function CardPage(){
@@ -16,6 +17,9 @@ function CardPage(){
   //states for searchbar
   const [inputText, setInputText] = useState("");
   const [headerText, setHeaderText] = useState(location.state.category)
+  //states for settings
+  const [settingsIsOpen, setSettingsIsOpen] = useState(false)
+  const [cardsize, setCardsize] = useState(1)
 
   useEffect(() =>{
     if(!(inputText==="")){
@@ -28,24 +32,36 @@ function CardPage(){
 
     return (
       <div>
+        <div className = "flexiblePage" style = {{marginRight: (settingsIsOpen ? "250px" : "0px")}}>
           <img onClick={() => navigate('/CategoryPage')} src={previous} className="previousIcon"/>
-      <h1>{headerText}</h1>
+          <button onClick={() => setSettingsIsOpen(!settingsIsOpen)}>
+            <img src="" alt="" />
+          </button>
+          
+          <h1>{headerText}</h1>
 
-    <div className="row">
-          <div className="col-sm-12 text-center">
-            <div className="container">
-            <SearchBar
-                setInputText = {p => {setInputText(p)}}
-                inputText = {inputText}
-                />
-              < CardGrid 
-                category = {location.state.category}
-                inputText = {inputText}
-              />
+          <div className="row">
+                <div className="col-sm-12 text-center">
+                  <div className="container">
+                  <SearchBar
+                      setInputText = {p => {setInputText(p)}}
+                      inputText = {inputText}
+                      />
+                    < CardGrid 
+                      category = {location.state.category}
+                      inputText = {inputText}
+                      cardsize = {cardsize}
+                      />
+                  </div>
+                </div>
             </div>
-          </div>
         </div>
-    </div>
+        <Settings 
+        cardsize = {cardsize}
+        setCardsize = {setCardsize}
+        settingsIsOpen = {settingsIsOpen}
+        />
+      </div>
     );
 }
 export default CardPage;

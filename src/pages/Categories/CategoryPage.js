@@ -15,23 +15,17 @@ import owl  from "../../Components/images/owl.jpg"
 
 
 function createCategoryCard(cardData) {
-    
      return(
-         
-             
              <CategoryCard 
                     img ={cardData.pic}
                     title={cardData.name}
-                    />
-            
+                    />     
      )
-
-  }
+}
   
-  function createCategoryCards(images) {
+function createCategoryCards(images) {
     return images.map(createCategoryCard);
-  }
-
+}
 
 
 

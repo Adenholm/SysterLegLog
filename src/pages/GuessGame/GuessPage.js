@@ -16,18 +16,37 @@ function GuessPage(props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [numberOfCards, setNumberOfCards] = useState(4)
-  const [categoryStates, setCategoryStates] = useState([])
+  const [categoryStates, setCategoryStates] = useState(Array(Categories.length).fill(true))
   const [allCategories, setAllCategories] = useState(true)
   const [nextCards, setNextCards] = useState(false); //for the guessCard to know when grid is updated
 
 
   useEffect(() => {
     fetchCards();
-  },[categoryStates,allCategories,numberOfCards]);
+    
+  },[categoryStates,numberOfCards]);
+  
+  useEffect(() => {
+    if(allCategories){
+      setCategoryStates(Array(Categories.length).fill(true))
+    }
+    else if(!allCategories && categoryStates.every(element => element === true)){
+      setCategoryStates(Array(Categories.length).fill(false))
+    }
+  },[allCategories]);
+
+  useEffect (() => {
+    if(categoryStates.every(element => element === true)){
+      setAllCategories(true)
+    }
+    else {
+      setAllCategories(false)
+    }
+  },[categoryStates]);
   
 
   function allCategoryNames(){
-    return Categories.slice(1).map(category => category.name)
+    return Categories.map(category => category.name)
   }
 
   const fetchCards = async () => {
@@ -90,8 +109,6 @@ function GuessPage(props) {
   }
 
   function createCards(images) {
-    console.log("images"+images)
-    images.map(cardData => {console.log("carddataid"+cardData.id)})
       return images.map(cardData => {return <Card 
           img = {cardData.pic} 
           isCorrect = {cardData.isCorrect}
@@ -127,7 +144,7 @@ function GuessPage(props) {
                      <GuessSettings 
                          setIsSettingsOpen={setIsSettingsOpen}
                          isSettingsOpen = {isSettingsOpen}
-                         props = {props}
+                         categoryStates = {categoryStates}
                          setNumberOfCards= {p => {setNumberOfCards(p)}}
                          setAllCategories= {p => {setAllCategories(p)}}
                          setCategoryStates= {p => {setCategoryStates(p)}}

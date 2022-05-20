@@ -55,8 +55,3 @@ button:hover {
   background-color: var(--btn-hover-color);
   cursor: pointer;
 }
-
-.container {
-  height: 100%;
-  left: 100%;
-}

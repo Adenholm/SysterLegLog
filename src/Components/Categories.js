@@ -11,11 +11,6 @@ import trea from "./images/trea.jpg"
 
 export let Categories = [
     {
-        name: 'Alla kategorier',
-        pic: owl
-    
-    },
-    {
     name: 'Djur',
     pic: animals
     },

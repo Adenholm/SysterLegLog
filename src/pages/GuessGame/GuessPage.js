@@ -102,7 +102,7 @@ function GuessPage(props) {
   }
 
   return (
-    <div id="flexiblePage" style = {{marginRight: (isSettingsOpen ? "250px" : "0px")}}>
+    <div className="flexiblePage" style = {{marginRight: (isSettingsOpen ? "250px" : "0px")}}>
       <div>
         <button>
           <Link to={-1}>Tillbaka</Link>

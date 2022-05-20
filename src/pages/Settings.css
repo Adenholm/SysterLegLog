@@ -12,8 +12,8 @@
     padding: 4rem 30px;
   }
 
-  #flexiblePage{
-    transition: margin-left .5s ease; /* If you want a transition effect */
+  .flexiblePage{
+    transition: .5s ease; /* If you want a transition effect */
   }
 
 

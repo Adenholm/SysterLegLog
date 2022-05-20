@@ -28,12 +28,7 @@ function CardPage(){
 
     return (
       <div>
-        <Settings 
-        cardsize = {cardsize}
-        setCardsize = {setCardsize}
-        settingsIsOpen = {settingsIsOpen}
-        />
-        <div style = {{marginRight: (settingsIsOpen ? "250px" : "0px")}}>
+        <div className = "flexiblePage" style = {{marginRight: (settingsIsOpen ? "250px" : "0px")}}>
           <button><Link to = {-1}>Tillbaka</Link></button>
           <button onClick={() => setSettingsIsOpen(!settingsIsOpen)}>
             <img src="" alt="" />
@@ -57,6 +52,11 @@ function CardPage(){
                 </div>
             </div>
         </div>
+        <Settings 
+        cardsize = {cardsize}
+        setCardsize = {setCardsize}
+        settingsIsOpen = {settingsIsOpen}
+        />
       </div>
     );
 }

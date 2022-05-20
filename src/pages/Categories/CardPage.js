@@ -13,6 +13,7 @@ function CardPage(){
   //states for searchbar
   const [inputText, setInputText] = useState("");
   const [headerText, setHeaderText] = useState(location.state.category)
+  //states for settings
   const [settingsIsOpen, setSettingsIsOpen] = useState(false)
   const [cardsize, setCardsize] = useState(1)
 
@@ -30,27 +31,33 @@ function CardPage(){
         <Settings 
         cardsize = {cardsize}
         setCardsize = {setCardsize}
+        settingsIsOpen = {settingsIsOpen}
         />
-        <button><Link to = {-1}>Tillbaka</Link></button>
-        
-      <h1>{headerText}</h1>
+        <div style = {{marginRight: (settingsIsOpen ? "250px" : "0px")}}>
+          <button><Link to = {-1}>Tillbaka</Link></button>
+          <button onClick={() => setSettingsIsOpen(!settingsIsOpen)}>
+            <img src="" alt="" />
+          </button>
+          
+          <h1>{headerText}</h1>
 
-    <div className="row">
-          <div className="col-sm-12 text-center">
-            <div className="container">
-            <SearchBar
-                setInputText = {p => {setInputText(p)}}
-                inputText = {inputText}
-                />
-              < CardGrid 
-                category = {location.state.category}
-                inputText = {inputText}
-                cardsize = {cardsize}
-              />
+          <div className="row">
+                <div className="col-sm-12 text-center">
+                  <div className="container">
+                  <SearchBar
+                      setInputText = {p => {setInputText(p)}}
+                      inputText = {inputText}
+                      />
+                    < CardGrid 
+                      category = {location.state.category}
+                      inputText = {inputText}
+                      cardsize = {cardsize}
+                      />
+                  </div>
+                </div>
             </div>
-          </div>
         </div>
-    </div>
+      </div>
     );
 }
 export default CardPage;

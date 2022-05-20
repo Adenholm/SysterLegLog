@@ -1,5 +1,9 @@
-.cardPhoto {
-  border: 10px solid var(--bg-color);
+.guessCard {
+  padding: 1.5rem 3rem;
+  display: flex;
+  position: relative;
+  height: 20rem;
+  width: 15rem;
 }
 
 .guessCardPhoto{
@@ -8,6 +12,7 @@
     object-fit: cover;
     border-radius: 1rem;
     border: 10px solid var(--bg-color);
+    position: absolute;
 }
 
 

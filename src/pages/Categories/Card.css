@@ -1,8 +1,6 @@
 .card {
   padding: 1.5rem 3rem;
-  display: flex;
-  position: relative;
-  height: 20rem;
+  position: inline;
 }
 
 .cardPhoto {
@@ -10,7 +8,6 @@
   width: 15rem;
   object-fit: cover;
   border-radius: 1rem;
-  position: absolute;
 }
 
 .cardPhoto:hover{

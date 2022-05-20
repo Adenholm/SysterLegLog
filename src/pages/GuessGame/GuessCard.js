@@ -1,4 +1,3 @@
-import "../Categories/Card.css";
 import React, { useState, useEffect } from "react";
 import "./GuessCard.css";
 
@@ -19,7 +18,7 @@ const Card = (props) => {
     }
   };
   return (
-    <div className="card" onClick={() => changeStyle("green")}>
+    <div className="guessCard" onClick={() => changeStyle("green")}>
       <img src={props.img} className="guessCardPhoto" id={props.id} />
       {props.isCorrect /**Adds confetti to correct card */ && (
         <img src="/images/confetti.gif" className="cardPhoto" id={"confetti"} />

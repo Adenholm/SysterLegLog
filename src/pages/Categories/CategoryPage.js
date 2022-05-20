@@ -10,6 +10,8 @@ import { useState } from "react";
 import Grid from '@mui/material/Grid';
 import "../Grid.css"
 
+
+
 function createCategoryCard(cardData) {
     
      return(
@@ -36,7 +38,7 @@ function CategoryPage (){
 
     return(
         <div>
-            <button><Link to = {-1}>Tillbaka</Link></button>
+            
             <h1>Kategorier</h1>
             <Grid container className="row">
               { createCategoryCards(Categories)} 

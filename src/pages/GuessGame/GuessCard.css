@@ -1,5 +1,21 @@
+.cardPhoto {
+  border: 10px solid var(--bg-color);
+}
 
+img ~ img {
+  opacity: 0;
+  z-index: 1;
+}
 
-.cardPhoto{
-    border: 10px solid var(--bg-color);
+.showclass {
+  opacity: 1;
+  height: 20rem;
+  width: 15rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  position: absolute;
+}
+
+.imgConfetti {
+  height: 100%;
 }

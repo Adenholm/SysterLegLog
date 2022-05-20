@@ -1,7 +1,8 @@
 .row {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    margin-left: -2%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  margin-left: -2%;
+  list-style: none;
 }

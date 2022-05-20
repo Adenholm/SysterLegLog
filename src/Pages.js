@@ -7,6 +7,7 @@ import GuessSettings from './pages/GuessGame/GuessSettings';
 import GuessPage from './pages/GuessGame/GuessPage';
 import Header from './Layouts/Header.js'
 import './App.css';
+import Footer from './Layouts/Footer';
 
   const Pages = () => {
     
@@ -22,6 +23,7 @@ import './App.css';
                         <Route exact path= '/GuessGame' element ={< GuessPage/>}></Route>
                     </Routes>
                 </div>
+                {Footer()}
               </div>
           </Router>
       )

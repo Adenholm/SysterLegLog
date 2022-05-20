@@ -1,3 +1,6 @@
+.cardPhoto {
+  border: 10px solid var(--bg-color);
+}
 
 .guessCardPhoto{
     height: 20rem;
@@ -7,7 +10,26 @@
     border: 10px solid var(--bg-color);
 }
 
+
 .guessCardPhoto:hover{
     scale: 1.05;
     cursor: pointer;
+}
+
+img ~ img {
+  opacity: 0;
+  z-index: 1;
+}
+
+.showclass {
+  opacity: 1;
+  height: 20rem;
+  width: 15rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  position: absolute;
+}
+
+.imgConfetti {
+  height: 100%;
 }

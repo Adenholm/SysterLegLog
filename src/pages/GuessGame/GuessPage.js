@@ -8,6 +8,11 @@ import "../Grid.css"
 import Grid from '@mui/material/Grid';
 import GuessSettings from "./GuessSettings"
 import "../Settings.css"
+import back from "../../Components/icons/back.png"
+import play from "../../Components/icons/volume.png"
+import stop from "../../Components/icons/mute.png"
+import setting from "../../Components/icons/settings.png"
+
 function GuessPage(props) {
 
   const [cards, setCards] = useState([]);
@@ -16,18 +21,37 @@ function GuessPage(props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [numberOfCards, setNumberOfCards] = useState(4)
-  const [categoryStates, setCategoryStates] = useState([])
+  const [categoryStates, setCategoryStates] = useState(Array(Categories.length).fill(true))
   const [allCategories, setAllCategories] = useState(true)
   const [nextCards, setNextCards] = useState(false); //for the guessCard to know when grid is updated
 
 
   useEffect(() => {
     fetchCards();
-  },[categoryStates,allCategories,numberOfCards]);
+    
+  },[categoryStates,numberOfCards]);
+  
+  useEffect(() => {
+    if(allCategories){
+      setCategoryStates(Array(Categories.length).fill(true))
+    }
+    else if(!allCategories && categoryStates.every(element => element === true)){
+      setCategoryStates(Array(Categories.length).fill(false))
+    }
+  },[allCategories]);
+
+  useEffect (() => {
+    if(categoryStates.every(element => element === true)){
+      setAllCategories(true)
+    }
+    else {
+      setAllCategories(false)
+    }
+  },[categoryStates]);
   
 
   function allCategoryNames(){
-    return Categories.slice(1).map(category => category.name)
+    return Categories.map(category => category.name)
   }
 
   const fetchCards = async () => {
@@ -90,8 +114,6 @@ function GuessPage(props) {
   }
 
   function createCards(images) {
-    console.log("images"+images)
-    images.map(cardData => {console.log("carddataid"+cardData.id)})
       return images.map(cardData => {return <Card 
           img = {cardData.pic} 
           isCorrect = {cardData.isCorrect}
@@ -104,14 +126,14 @@ function GuessPage(props) {
   return (
     <div className="flexiblePage" style = {{marginRight: (isSettingsOpen ? "250px" : "0px")}}>
       <div>
-        <button>
-          <Link to={-1}>Tillbaka</Link>
-        </button>
+      
         <button onClick={() => setIsPlaying(!isPlaying)}>
+          <img src= {!isPlaying ? stop : play} className="iconImage" />
           {!isPlaying ? "Spela Ljud" : "Stoppa ljud"}
         </button>
         <button onClick={fetchCards}>Nästa</button>
-        <button onClick={() => setIsSettingsOpen(!isSettingsOpen)}>
+        <button onClick={() => setIsSettingsOpen(!isSettingsOpen)}> 
+        <img src={setting} className = "iconImage"/>
         Inställningar
         </button>
         <Grid container className = "row">
@@ -127,7 +149,7 @@ function GuessPage(props) {
                      <GuessSettings 
                          setIsSettingsOpen={setIsSettingsOpen}
                          isSettingsOpen = {isSettingsOpen}
-                         props = {props}
+                         categoryStates = {categoryStates}
                          setNumberOfCards= {p => {setNumberOfCards(p)}}
                          setAllCategories= {p => {setAllCategories(p)}}
                          setCategoryStates= {p => {setCategoryStates(p)}}

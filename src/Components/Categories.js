@@ -11,48 +11,51 @@ import trea from "./images/trea.jpg"
 
 export let Categories = [
     {
-        name: 'Alla kategorier',
-        pic: owl
-    
-    },
-    {
+    id: 0,
     name: 'Djur',
     pic: animals
     },
 
     {
+    id: 1,
     name: 'Instrument',
     pic: instruments
     },
 
     {
+    id: 2,
     name: 'Fordon',
     pic: cars
     },
 
     {
+    id: 3,
     name: 'Inomhus',
     pic: appliances
     },
 
     {
+    id: 4,
     name: 'Natur',
     pic: trea
     },
 
     {
+    id: 5,
     name: 'Mänskliga ljud',
     pic: kids
     },
 
     {
+    id: 6,
     name: 'Varningsljud',
     pic: siren
     },
 
     {
-        name: 'Stad',
-        pic: city
+    id: 7,
+    name: 'Stad',
+    pic: city
     }
 
 ];

@@ -5,11 +5,15 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { useEffect } from "react";
+import previous from "../../Components/icons/back.png"
+import { useNavigate } from "react-router-dom";
+import "../../App.css"
 import Settings from "./Settings";
 
 
 function CardPage(){
   const location = useLocation();
+  let navigate = useNavigate();
   //states for searchbar
   const [inputText, setInputText] = useState("");
   const [headerText, setHeaderText] = useState(location.state.category)
@@ -29,7 +33,7 @@ function CardPage(){
     return (
       <div>
         <div className = "flexiblePage" style = {{marginRight: (settingsIsOpen ? "250px" : "0px")}}>
-          <button><Link to = {-1}>Tillbaka</Link></button>
+          <img onClick={() => navigate('/CategoryPage')} src={previous} className="previousIcon"/>
           <button onClick={() => setSettingsIsOpen(!settingsIsOpen)}>
             <img src="" alt="" />
           </button>

@@ -50,8 +50,3 @@ button {
   color: var(--text-color);
   transition: color 100ms;
 }
-
-button:hover {
-  background-color: var(--btn-hover-color);
-  cursor: pointer;
-}

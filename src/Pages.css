@@ -13,13 +13,13 @@
   border: none;
   cursor: pointer;
 
-  background-color: #168faa;
+  background-color: #018e96;
   color: #242424;
 }
 
 .item:hover {
   transition: all 0.3s ease-out;
-  background: rgb(109, 163, 233);
+  background: #e5ad01;
   color: #242424;
   transition: 250ms;
 }
@@ -52,7 +52,7 @@
 }
 
 .text {
-  color: midnightblue;
+  color: rgb(0, 0, 0);
   display: block;
   align-items: center;
   text-decoration: aqua;

@@ -5,7 +5,6 @@ import "../Pages.css";
 function StartPage() {
   return (
     <div>
-      <h1 className="text">LegLoggen</h1>
       <ul className="nav">
         <li className="item">
           <Link to="/CategoryPage" className="link">

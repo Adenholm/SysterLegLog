@@ -2,7 +2,7 @@
 
 #root {
   height: 100vh;
-  --bg-color: #D0E4F5;
+  --bg-color: #d0fce0;
   --btn-color: white;
   --btn-hover-color: #ebf3fa;
   --text-color: rgb(39, 39, 39);
@@ -20,7 +20,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #03191f;
 }
 
 .pages-background {
@@ -42,7 +42,7 @@ button {
     padding: 0.5rem 1.1rem;
     margin: 0.5rem 0.5rem;
     border-radius: 2rem;
-    border: 0rem;
+    border: 0;
     background-color: var(--btn-color);
 
     font-family: Nunito;

@@ -18,6 +18,7 @@ function StartPage() {
           </Link>
         </li>
       </ul>
+      <img src="/images/flyingCat.gif" />
     </div>
   );
 }

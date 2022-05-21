@@ -2,12 +2,21 @@
   border: 10px solid var(--bg-color);
 }
 
+.card {
+  width: 200px;
+  display: flex;
+  border-radius: 1rem;
+  position: relative;
+  height: 20rem;
+}
 img ~ img {
+  /*Adds to siblingImage, in this case the Confetti*/
   opacity: 0;
   z-index: 1;
 }
 
 .showclass {
+  /*When correct card is clicked the class showclass is assign to the correct*/
   opacity: 1;
   height: 20rem;
   width: 15rem;

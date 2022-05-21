@@ -13,10 +13,7 @@ function GuessSettings (props){
 
     return(
             <div id = "mySidebar" className="sidebar" style = {{width: (props.isSettingsOpen ? "250px" : "0px")}}>
-                <CheckboxList
-                    props = {props}
-                />
-
+                <CheckboxList {...props}/>
                 <DiscreteSlider onChangeHandler = {props.setNumberOfCards}/>
             </div>
     )

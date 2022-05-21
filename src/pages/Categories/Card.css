@@ -1,13 +1,17 @@
-.card{
+.card {
   padding: 1.5rem 3rem;
-  width: 200px;
-  display: inline;
-  border-radius: 1rem;
-  }
+  position: inline;
+}
 
-.cardPhoto{
+.cardPhoto {
   height: 20rem;
   width: 15rem;
   object-fit: cover;
   border-radius: 1rem;
+}
+
+.cardPhoto:hover{
+  scale: 1.05;
+  cursor: pointer;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
 }

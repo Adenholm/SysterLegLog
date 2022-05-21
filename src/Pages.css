@@ -13,13 +13,13 @@
   border: none;
   cursor: pointer;
 
-  background-color: #018e96;
+  background-color: #ffc06e;
   color: #242424;
 }
 
 .item:hover {
   transition: all 0.3s ease-out;
-  background: #e5ad01;
+  background: #75ce9f;
   color: #242424;
   transition: 250ms;
 }

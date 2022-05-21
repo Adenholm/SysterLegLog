@@ -1,50 +1,36 @@
-import Checkbox from "./Checkbox";
 import { Categories } from "./Categories";
    
-   //array that doesn't include the 'Alla kategorier' category
-    var onlyCategories = Categories.slice(1)
 
    const CheckboxList = (props) =>{
-         //array with individual states for each checkbox to keep track of which checkboxes are checked or not
-    const states = []
-   
-    //var that keeps track on where each category has its state
-    var i = -1;
-   
-    //function for creating the 'Alla kategorier'-checkbox
-    function createCategoriesCheckbox(cardData){
-        return (
+
+    function checkBoxChanged (id) {
+        const newStates = [...props.categoryStates]
+        newStates[id] = !props.categoryStates[id]
+        props.setCategoryStates(newStates)
+    }
+    return (
+        <div>
             <div>
                 <input
-                    id="checkbox"
                     type="checkbox"
                     checked={props.allCategories}
                     onChange={() => props.setAllCategories(!props.allCategories)}
                 />
                 <label htmlFor={"checkbox"}>{"Alla kategorier"}</label>
             </div>
-        )
-    }
-    //function for creating remaining checkboxes
-    function createCheckbox(cardData) {
-        i++;
-        return(    
-                <Checkbox 
-                id = "checkbox"
-                label = {cardData.name}
-                index = {i}
-                getState = {(state,index) => states[index]=state}
-                setCategories = {(p) => props.setCategoryStates(p)}
-                states = {states}
-                />
-        )
-    } 
-    return (
-        <div>
-        {createCategoriesCheckbox(Categories[0])}
-        {onlyCategories.map(createCheckbox)}
+            {Categories.map(cardData =>
+                <div>
+                    <input
+                        id = {cardData.id}
+                        type="checkbox"
+                        checked={props.categoryStates[cardData.id]}
+                        onChange={() => checkBoxChanged(cardData.id)}
+                    />
+                    <label htmlFor={cardData.id}>{cardData.name}</label>
+                </div>
+            )}
         </div>
     )
-   };
-   export default CheckboxList;
+};
+export default CheckboxList;
   

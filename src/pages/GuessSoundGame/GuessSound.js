@@ -121,9 +121,9 @@ const fetchCard = async () => {
           {!isPlaying ? "Spela Ljud" : "Stoppa ljud"}
         </button>
         <button onClick={fetchCard}>Nästa</button>
-        <button onClick={() => setIsSettingsOpen(!isSettingsOpen)}> 
+        <button onClick={() => setIsSettingsOpen(!isSettingsOpen)} > 
         <img src={setting} className = "iconImage"/>
-        Inställningar
+        Inställningar 
         </button>
         <Grid container className = "row">
           <div className="card">

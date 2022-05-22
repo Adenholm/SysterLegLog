@@ -108,10 +108,7 @@ const fetchCard = async () => {
   return (
     <div className="flexiblePage" style = {{marginRight: (isSettingsOpen ? "250px" : "0px")}}>
       <div>
-        <button onClick={() => setIsSettingsOpen(!isSettingsOpen)} > 
-        <img src={setting} className = "iconImage"/>
-        Inställningar 
-        </button>
+        <img src={setting} className = "settingsIcon" onClick={() => setIsSettingsOpen(!isSettingsOpen)} style = {{marginRight: (isSettingsOpen ? "260px" : "0px")}}/>
         <Grid container className = "row">
           <div style={{justifyContent:"center",display:"flex",flexDirection:"column"}}>
             <button onClick={() => setIsPlaying(!isPlaying)}>

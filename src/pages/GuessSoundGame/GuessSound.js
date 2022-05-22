@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react"; 
-import { Link } from "react-router-dom";
 import Sound from 'react-sound';
 import axios from "axios";
 import { Categories } from "../../Components/Categories";
 import { useLocation } from "react-router-dom";
 import "../Settings.css"
-import back from "../../Components/icons/back.png"
 import play from "../../Components/icons/volume.png"
 import stop from "../../Components/icons/mute.png"
 import setting from "../../Components/icons/settings.png"
 import GuessSoundSettings from "./GuessSoundSettings"
 import Grid from '@mui/material/Grid';
-import Card from "../Categories/Card";
 import question from "../../Components/images/question-mark.jpg"
 
 
@@ -21,7 +18,6 @@ function GuessSound () {
   const [card, setCard] = useState(undefined);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const location = useLocation();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [categoryStates, setCategoryStates] = useState(Array(Categories.length).fill(true))
   const [allCategories, setAllCategories] = useState(true)
@@ -58,7 +54,6 @@ function GuessSound () {
 
 const fetchCard = async () => {
 
-  console.log("allcategories"+allCategories)
     let catStats = [];
     //if the all categories-checkbox was checked, just send all categories
     if(allCategories==true || getCurrentCategories(categoryStates).length == 0){
@@ -70,7 +65,6 @@ const fetchCard = async () => {
     }
     //stringify the array to send as a parameter
     let jsonArr = JSON.stringify(catStats)
-    console.log("categorystates"+jsonArr)
     let post_data = {json_data:jsonArr}
     try {
       const {data} = await axios.post('http://localhost:4001/cards/guess', post_data);
@@ -89,7 +83,7 @@ const fetchCard = async () => {
   }
   
   function allCategoryNames(){
-    return Categories.slice(1).map(category => category.name)
+    return Categories.map(category => category.name)
   }
 
   function getCurrentCategories (states){

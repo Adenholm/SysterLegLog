@@ -65,6 +65,27 @@ button:hover {
   cursor: pointer;
 }
 
+.playButton{
+  background-color: #61dafb;
+  position: absolute;
+  right: 42%;
+  
+}
+
+.nextButton{
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  
+}
+
+.settingsButton{
+  position: fixed;
+  right: 10%;
+  
+  
+}
+
 .iconImage {
   height: 1rem;
   width: 1rem;

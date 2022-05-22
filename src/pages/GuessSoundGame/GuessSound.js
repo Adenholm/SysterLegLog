@@ -71,7 +71,6 @@ const fetchCard = async () => {
       setCard( data[Math.floor(Math.random() * data.length)])
       setIsHidden(true)
       setNextCard(!nextCard)
-      setIsPlaying(false)
       setIsLoaded(true);
     } catch (error) {
       console.error('Couldnt retrieve cards: ' + error)
@@ -126,7 +125,7 @@ const fetchCard = async () => {
                     onClick={() => setIsHidden(false)} 
                     />         
             </div>
-            <button onClick={fetchCard}>Nästa</button>
+            <button onClick={() => {setIsHidden(true); fetchCard(); setIsPlaying(true)}}>Nästa</button>
           </div>
           <Sound
             url={card.sound}

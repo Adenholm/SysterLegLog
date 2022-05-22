@@ -27,6 +27,7 @@
   background-color: var(--bg-color);
   left: 100%;
   height: 100%;
+  z-index: -5; /* Stay on back*/
 }
 
 .pages {
@@ -36,6 +37,7 @@
   min-height: 100%;
   padding: 2rem 10%;
   min-height: 70vh;
+  z-index: -5;
 }
 
 button {

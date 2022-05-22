@@ -125,7 +125,7 @@ const fetchCard = async () => {
                     onClick={() => setIsHidden(false)} 
                     />         
             </div>
-            <button onClick={() => {fetchCard(); setIsPlaying(true)}}>Nästa</button>
+            <button onClick={() => {setIsHidden(true); fetchCard(); setIsPlaying(true)}}>Nästa</button>
           </div>
           <Sound
             url={card.sound}

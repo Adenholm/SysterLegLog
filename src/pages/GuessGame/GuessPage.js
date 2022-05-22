@@ -84,7 +84,6 @@ function GuessPage(props) {
       setCards(randomCards)
       console.log(choosenCard)
       setCorrectCard(choosenCard)
-      setIsPlaying(false)
       setIsLoaded(true);
     } catch (error) {
       console.error('Couldnt retrieve cards: ' + error)
@@ -131,10 +130,9 @@ function GuessPage(props) {
           <img src= {!isPlaying ? stop : play} className="iconImage" />
           {!isPlaying ? "Spela Ljud" : "Stoppa ljud"}
         </button>
-        <button onClick={fetchCards}>Nästa</button>
-        
+        <button onClick={() => {fetchCards(); setIsPlaying(true)}}>Nästa</button>
         <img src={setting} className = "settingsIcon" onClick={() => setIsSettingsOpen(!isSettingsOpen)} style = {{marginRight: (isSettingsOpen ? "260px" : "0px"),  transition: "0.5s ease"}}/>
-
+        
         <Grid container className = "row">
           {createCards(cards)}
           <Sound

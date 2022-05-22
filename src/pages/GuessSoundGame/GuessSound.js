@@ -71,7 +71,6 @@ const fetchCard = async () => {
       setCard( data[Math.floor(Math.random() * data.length)])
       setIsHidden(true)
       setNextCard(!nextCard)
-      setIsPlaying(false)
       setIsLoaded(true);
     } catch (error) {
       console.error('Couldnt retrieve cards: ' + error)
@@ -109,23 +108,24 @@ const fetchCard = async () => {
   return (
     <div className="flexiblePage" style = {{marginRight: (isSettingsOpen ? "250px" : "0px")}}>
       <div>
-      
-        <button onClick={() => setIsPlaying(!isPlaying)}>
-          <img src= {!isPlaying ? stop : play} className="iconImage" />
-          {!isPlaying ? "Spela Ljud" : "Stoppa ljud"}
-        </button>
-        <button onClick={fetchCard}>Nästa</button>
         <button onClick={() => setIsSettingsOpen(!isSettingsOpen)} > 
         <img src={setting} className = "iconImage"/>
         Inställningar 
         </button>
         <Grid container className = "row">
-          <div className="card">
-              <img 
-                  src={isHidden ? question : card.pic}
-                  className="cardPhoto" 
-                  onClick={() => setIsHidden(false)} 
-                  />         
+          <div style={{justifyContent:"center",display:"flex",flexDirection:"column"}}>
+            <button onClick={() => setIsPlaying(!isPlaying)}>
+              <img src= {!isPlaying ? stop : play} className="iconImage" />
+              {!isPlaying ? "Spela Ljud" : "Stoppa ljud"}
+            </button>
+            <div className="card">
+                <img 
+                    src={isHidden ? question : card.pic}
+                    className="cardPhoto" 
+                    onClick={() => setIsHidden(false)} 
+                    />         
+            </div>
+            <button onClick={() => {setIsHidden(true); fetchCard(); setIsPlaying(true)}}>Nästa</button>
           </div>
           <Sound
             url={card.sound}

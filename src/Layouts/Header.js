@@ -22,6 +22,11 @@ const Header = (props) => {
                         Lyssna och Gissa
                     </Link>
                 </li>
+                <li className="menuButton">
+                    <Link to = "/GuessSound" className="headerLink">
+                        Gissa och se
+                    </Link>
+                </li>
             </div>
         </div>
     );

@@ -1,11 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:wght@400;700;800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Smokum&family=Fredericka+the+Great&family=Chewy&family=Titan+One&family=Lobster&family=Nunito&family=Rock+Salt&family=Exo+2:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nunito&family=Signika+Negative&family=Tajawal&family=Russo+One&family=Lobster+Two&family=Asap+Condensed:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Titan+One&family=Pirata+One&family=Fuzzy+Bubbles&family=Bubblegum+Sans&family=Londrina+Solid&family=Mitr&family=Abril+Fatface&family=Commissioner&family=Londrina+Outline");
 #root {
   height: 100vh;
   --bg-color: #ffffff;
   --btn-color: white;
   --btn-hover-color: #ebf3fa;
   --text-color: rgb(39, 39, 39);
+
+  --font: Londrina Solid;
+  --font-logo: var(--font);
+  --font-boring: Commissioner;
+  font-family: var(--font);
 }
 
 .App-header {
@@ -47,13 +53,12 @@ button {
   border: 0rem;
   background-color: var(--btn-color);
 
-
-    font-family: Nunito;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color 100ms;
-    font-size: 1.2rem;
-  }
+  font-family: var(--font-boring);
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 100ms;
+  font-size: 1.2rem;
+}
 
 button:hover {
   background-color: var(--btn-hover-color);
@@ -62,14 +67,12 @@ button:hover {
 
 .iconImage {
   height: 1rem;
-  width: 1rem; 
+  width: 1rem;
   margin-right: 5px;
-  
 }
 
-.previousIcon{
+.previousIcon {
   height: 2rem;
-  width: 2rem; 
+  width: 2rem;
   margin-left: -25mm;
-
 }

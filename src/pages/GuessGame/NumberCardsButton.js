@@ -7,7 +7,7 @@ import Slider from '@mui/material/Slider';
   
   export default function DiscreteSlider(props) {
     return (
-      <Box sx={{ width: 300 }}>
+      <Box>
         <Slider
           aria-label="Temperature"
           defaultValue={4}

@@ -24,7 +24,7 @@ function GuessSettings (props){
                     marks
                     min={2}
                     max={8}
-                    onChange = {(e, val) => props.onChangeHandler(val)}
+                    onChange = {(e, val) => props.setNumberOfCards(val)}
                     sx={{
                         '&.MuiSlider-colorPrimary': {
                           color: "green",

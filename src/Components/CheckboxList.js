@@ -1,4 +1,5 @@
 import { Categories } from "./Categories";
+import {Checkbox} from "@mui/material"
    
 
    const CheckboxList = (props) =>{
@@ -11,20 +12,32 @@ import { Categories } from "./Categories";
     return (
         <div>
             <div>
-                <input
-                    type="checkbox"
+                <Checkbox
                     checked={props.allCategories}
                     onChange={() => props.setAllCategories(!props.allCategories)}
+                    defaultChecked size="small"
+                    sx={{
+                        color: "green",
+                        '&.Mui-checked': {
+                          color: "green",
+                        },
+                    }}
                 />
                 <label htmlFor={"checkbox"}>{"Alla kategorier"}</label>
             </div>
             {Categories.map(cardData =>
                 <div>
-                    <input
+                    <Checkbox
                         id = {cardData.id}
-                        type="checkbox"
                         checked={props.categoryStates[cardData.id]}
                         onChange={() => checkBoxChanged(cardData.id)}
+                        defaultChecked size="small"
+                        sx={{
+                            color: "green",
+                            '&.Mui-checked': {
+                              color: "green",
+                            },
+                        }}
                     />
                     <label htmlFor={cardData.id}>{cardData.name}</label>
                 </div>

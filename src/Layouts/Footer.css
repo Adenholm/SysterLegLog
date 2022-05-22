@@ -1,22 +1,18 @@
 .footer {
     font-family: Nunito;
-    position: relative;
-    background-color: white;
+    background-color: var(--header-color);
     display: flex;
     flex-direction: row;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 0px;
     bottom: 0;
     width: 100%;
-    height: 100 px;
-
+    height: 10vh;
+    color: var(--header-text-color);
 }
 
 
-.footer-seperator{
-    flex-grow: 1;
-    height: 1px;
-    background-color: white;
-    width: 100%;
+.footer-seperator{ 
+    height: 0;
+    background-color: none;
     border: none;
 }
-

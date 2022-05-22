@@ -1,5 +1,5 @@
 .item {
-  color: #fff;
+  color: var(--text-color);
   align-items: center;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -13,30 +13,25 @@
   border: none;
   cursor: pointer;
 
-  background-color: #168faa;
+  background-color:  var(--start-btn-color);
   color: #242424;
 }
 
 .item:hover {
   transition: all 0.3s ease-out;
-  background: rgb(109, 163, 233);
+  background: var(--start-btn-hover-color);
   color: #242424;
   transition: 250ms;
 }
 
-@font-face {
-  font-family: planewalker;
-  src: url(planewalker\ bold\ italic.otf);
-}
-
 .link {
-  color: oldlace;
+  color: var(--text-color);
   display: block;
   align-items: center;
   text-decoration: aqua;
   padding: 0.5rem 1rem;
   height: 100%;
-  font-family: planewalker;
+
   font-size: xx-large;
   text-align: center;
 }
@@ -52,13 +47,13 @@
 }
 
 .text {
-  color: midnightblue;
+  color: rgb(0, 0, 0);
   display: block;
   align-items: center;
   text-decoration: aqua;
 
   height: 100%;
-  font-family: planewalker;
+  font-family: var(--font);
   font-size: xx-large;
   text-align: center;
 

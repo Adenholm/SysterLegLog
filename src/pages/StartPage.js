@@ -7,7 +7,6 @@ function StartPage() {
   return (
     <div>
       <img src={doggie} className= "startImage"/>
-      <h1 className="text">LegLoggen</h1>
       <ul className="nav">
         <li className="item">
           <Link to="/CategoryPage" className="link">
@@ -17,6 +16,11 @@ function StartPage() {
         <li className="item">
           <Link to="/GuessGame" className="link">
             Lyssna och Gissa
+          </Link>
+        </li>
+        <li className="item">
+          <Link to="/GuessSound" className="link">
+            Gissa och se
           </Link>
         </li>
       </ul>

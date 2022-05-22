@@ -1,12 +1,14 @@
 import owl from "./images/owl.jpg"
 import animals from "./images/pets.jpg"
-import instruments from "./images/instruments.png"
+import instruments from "./images/instruments.jpg"
 import appliances from "./images/appliances.png"
 import cars from "./images/cars.png"
 import city from "./images/city.jpg"
 import kids from "./images/kids.png"
 import siren from "./images/siren.jpg"
 import trea from "./images/trea.jpg"
+import people from "./images/people.jpg"
+import home from "./images/living-room.jpg"
 
 
 export let Categories = [
@@ -21,39 +23,32 @@ export let Categories = [
     name: 'Instrument',
     pic: instruments
     },
-
     {
     id: 2,
-    name: 'Fordon',
-    pic: cars
+    name: 'Inomhus',
+    pic: home
     },
 
     {
     id: 3,
-    name: 'Inomhus',
-    pic: appliances
-    },
-
-    {
-    id: 4,
     name: 'Natur',
     pic: trea
     },
 
     {
-    id: 5,
+    id: 4,
     name: 'Mänskliga ljud',
-    pic: kids
+    pic: people
     },
 
     {
-    id: 6,
+    id: 5,
     name: 'Varningsljud',
     pic: siren
     },
 
     {
-    id: 7,
+    id: 6,
     name: 'Stad',
     pic: city
     }

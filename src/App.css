@@ -1,27 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:wght@400;700;800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Smokum&family=Fredericka+the+Great&family=Chewy&family=Titan+One&family=Lobster&family=Nunito&family=Rock+Salt&family=Exo+2:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nunito&family=Signika+Negative&family=Tajawal&family=Russo+One&family=Lobster+Two&family=Asap+Condensed:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Titan+One&family=Pirata+One&family=Fuzzy+Bubbles&family=Bubblegum+Sans&family=Londrina+Solid&family=Mitr&family=Abril+Fatface&family=Commissioner&family=Londrina+Outline");
 #root {
   height: 100vh;
-  --bg-color: #d0e4f5;
-  --btn-color: white;
-  --btn-hover-color: #ebf3fa;
+  --bg-color: #ffffff;
+  --btn-color: #c4edb3;
+  --btn-hover-color: #c5ead3;
+  --start-btn-color: #c4edb3;
+  --start-btn-hover-color: #c5ead3;
+
+  --header-color: #669752;
+  --header-text-color: white;
   --text-color: rgb(39, 39, 39);
+
+  --font: Londrina Solid;
+  --font-logo: var(--font);
+  --font-boring: Commissioner;
+  font-family: var(--font);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 .pages-background {
   background-color: var(--bg-color);
@@ -36,8 +33,7 @@
   height: 100%;
   min-height: 100%;
   padding: 2rem 10%;
-  min-height: 70vh;
-  z-index: -5;
+  min-height: 75vh;
 }
 
 button {
@@ -49,28 +45,68 @@ button {
   border: 0rem;
   background-color: var(--btn-color);
 
-    font-family: Nunito;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color 100ms;
-    font-size: 1.2rem;
-  }
+  font-family: var(--font-boring);
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 100ms;
+  font-size: 1.2rem;
+}
 
 button:hover {
   background-color: var(--btn-hover-color);
   cursor: pointer;
 }
 
-.iconImage {
-  height: 1rem;
-  width: 1rem; 
-  margin-right: 5px;
+.playButton{
+  background-color: #61dafb;
+  position: absolute;
+  right: 42%;
   
 }
 
-.previousIcon{
-  height: 2rem;
-  width: 2rem; 
-  margin-left: -25mm;
+.nextButton{
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  
+}
 
+.settingsButton{
+  position: fixed;
+  right: 10%;
+  
+  
+}
+
+.iconImage {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 5px;
+}
+
+.previousIcon {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  margin-left: -5%;
+}
+
+.previousIcon:hover {
+  opacity: 0.6;
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.settingsIcon {
+  opacity: 1;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  right: 5%;
+}
+
+.settingsIcon:hover {
+  opacity: 0.6;
+  scale: 1.05;
+  cursor: pointer;
 }

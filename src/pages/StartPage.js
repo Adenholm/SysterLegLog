@@ -16,6 +16,11 @@ function StartPage() {
             Lyssna och Gissa
           </Link>
         </li>
+        <li className="item">
+          <Link to="/GuessSound" className="link">
+            Gissa och se
+          </Link>
+        </li>
       </ul>
     </div>
   );

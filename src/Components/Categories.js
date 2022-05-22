@@ -23,38 +23,32 @@ export let Categories = [
     name: 'Instrument',
     pic: instruments
     },
-
-    //{
-    //name: 'Fordon',
-   // pic: cars
-    //},
-
     {
-    id: 3,
+    id: 2,
     name: 'Inomhus',
     pic: home
     },
 
     {
-    id: 4,
+    id: 3,
     name: 'Natur',
     pic: trea
     },
 
     {
-    id: 5,
+    id: 4,
     name: 'Mänskliga ljud',
     pic: people
     },
 
     {
-    id: 6,
+    id: 5,
     name: 'Varningsljud',
     pic: siren
     },
 
     {
-    id: 7,
+    id: 6,
     name: 'Stad',
     pic: city
     }

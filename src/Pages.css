@@ -24,11 +24,6 @@
   transition: 250ms;
 }
 
-@font-face {
-  font-family: planewalker;
-  src: url(planewalker\ bold\ italic.otf);
-}
-
 .link {
   color: var(--text-color);
   display: block;
@@ -36,7 +31,7 @@
   text-decoration: aqua;
   padding: 0.5rem 1rem;
   height: 100%;
-  font-family: planewalker;
+
   font-size: xx-large;
   text-align: center;
 }
@@ -58,7 +53,7 @@
   text-decoration: aqua;
 
   height: 100%;
-  font-family: planewalker;
+  font-family: var(--font);
   font-size: xx-large;
   text-align: center;
 

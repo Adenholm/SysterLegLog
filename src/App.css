@@ -7,8 +7,9 @@
   --btn-hover-color: #ebf3fa;
   --text-color: rgb(39, 39, 39);
 
-  --font: Fredericka the Great;
+  --font: ariat;
   --font-logo: var(--font);
+  --font-boring: times new roman;
   font-family: var(--font);
 }
 
@@ -51,7 +52,7 @@ button {
   border: 0rem;
   background-color: var(--btn-color);
 
-  font-family: var(--font);
+  font-family: var(--font-boring);
   text-decoration: none;
   color: var(--text-color);
   transition: color 100ms;

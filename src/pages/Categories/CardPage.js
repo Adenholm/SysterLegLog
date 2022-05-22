@@ -1,7 +1,6 @@
 import React from "react";
 import CardGrid from "./CardGrid";
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -9,6 +8,8 @@ import previous from "../../Components/icons/back.png"
 import { useNavigate } from "react-router-dom";
 import "../../App.css"
 import Settings from "./Settings";
+import settingsicon from "../../Components/icons/settings.png"
+
 
 
 function CardPage(){
@@ -34,9 +35,8 @@ function CardPage(){
       <div>
         <div className = "flexiblePage" style = {{marginRight: (settingsIsOpen ? "250px" : "0px")}}>
           <img onClick={() => navigate('/CategoryPage')} src={previous} className="previousIcon"/>
-          <button onClick={() => setSettingsIsOpen(!settingsIsOpen)}>
-            <img src="" alt="" />
-          </button>
+          <img onClick={() => setSettingsIsOpen(!settingsIsOpen)} src={settingsicon} className = "settingsIcon" style = {{marginRight: (settingsIsOpen ? "260px" : "0px"),  transition: "0.5s ease"}} /> 
+          
           
           <h1>{headerText}</h1>
 

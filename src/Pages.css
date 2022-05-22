@@ -13,7 +13,7 @@
   border: none;
   cursor: pointer;
 
-  background-color:  var(--btn-color);
+  background-color:  var(--start-btn-color);
   color: #242424;
 }
 

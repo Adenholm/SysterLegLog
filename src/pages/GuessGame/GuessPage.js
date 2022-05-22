@@ -132,10 +132,9 @@ function GuessPage(props) {
           {!isPlaying ? "Spela Ljud" : "Stoppa ljud"}
         </button>
         <button onClick={fetchCards}>Nästa</button>
-        <button onClick={() => setIsSettingsOpen(!isSettingsOpen)}> 
-        <img src={setting} className = "iconImage"/>
-        Inställningar
-        </button>
+        
+        <img src={setting} className = "settingsIcon" onClick={() => setIsSettingsOpen(!isSettingsOpen)} style = {{marginRight: (isSettingsOpen ? "260px" : "0px"),  transition: "0.5s ease"}}/>
+
         <Grid container className = "row">
           {createCards(cards)}
           <Sound

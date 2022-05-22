@@ -4,11 +4,13 @@
 #root {
   height: 100vh;
   --bg-color: #ffffff;
-  --btn-color: #9adcb2;
+  --btn-color: #c4edb3;
   --btn-hover-color: #c5ead3;
-  --start-btn-color: #9adcb2;
+  --start-btn-color: #c4edb3;
   --start-btn-hover-color: #c5ead3;
-  --header-color: #9adcb2;
+
+  --header-color: #669752;
+  --header-text-color: white;
   --text-color: rgb(39, 39, 39);
 
   --font: Londrina Solid;
@@ -82,7 +84,28 @@ button:hover {
 }
 
 .previousIcon {
+  position: absolute;
   height: 2rem;
   width: 2rem;
-  margin-left: -25mm;
+  margin-left: -5%;
+}
+
+.previousIcon:hover {
+  opacity: 0.6;
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.settingsIcon {
+  opacity: 1;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  right: 5%;
+}
+
+.settingsIcon:hover {
+  opacity: 0.6;
+  scale: 1.05;
+  cursor: pointer;
 }

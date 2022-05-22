@@ -3,9 +3,10 @@
 #root {
   height: 100vh;
   --bg-color: #ffffff;
-  --btn-color: white;
-  --btn-hover-color: #ebf3fa;
-  --start-btn-color: 
+  --btn-color: #9adcb2;
+  --btn-hover-color: #c5ead3;
+  --start-btn-color: #9adcb2;
+  --start-btn-hover-color: #c5ead3;
   --header-color: #9adcb2;
   --text-color: rgb(39, 39, 39);
 }

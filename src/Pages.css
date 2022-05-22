@@ -1,5 +1,5 @@
 .item {
-  color: #fff;
+  color: var(--text-color);
   align-items: center;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -13,13 +13,13 @@
   border: none;
   cursor: pointer;
 
-  background-color: #f8c787;
+  background-color:  var(--btn-color);
   color: #242424;
 }
 
 .item:hover {
   transition: all 0.3s ease-out;
-  background: #75ce9f;
+  background: var(--start-btn-hover-color);
   color: #242424;
   transition: 250ms;
 }
@@ -30,7 +30,7 @@
 }
 
 .link {
-  color: oldlace;
+  color: var(--text-color);
   display: block;
   align-items: center;
   text-decoration: aqua;

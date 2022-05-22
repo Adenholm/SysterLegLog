@@ -16,7 +16,7 @@
 }
 
 
-.guessCardPhoto:hover{
+.guessCard:hover{
     scale: 1.05;
     cursor: pointer;
 }

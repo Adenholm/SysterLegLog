@@ -4,8 +4,11 @@
 #root {
   height: 100vh;
   --bg-color: #ffffff;
-  --btn-color: white;
-  --btn-hover-color: #ebf3fa;
+  --btn-color: #9adcb2;
+  --btn-hover-color: #c5ead3;
+  --start-btn-color: #9adcb2;
+  --start-btn-hover-color: #c5ead3;
+  --header-color: #9adcb2;
   --text-color: rgb(39, 39, 39);
 
   --font: Londrina Solid;
@@ -14,20 +17,6 @@
   font-family: var(--font);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #03191f;
-}
 
 .pages-background {
   background-color: var(--bg-color);
@@ -41,7 +30,7 @@
   height: 100%;
   min-height: 100%;
   padding: 2rem 10%;
-  min-height: 70vh;
+  min-height: 75vh;
 }
 
 button {

@@ -10,6 +10,7 @@ import { useState } from "react";
 import Grid from '@mui/material/Grid';
 import "../Grid.css"
 import owl  from "../../Components/images/owl.jpg"
+import box from "../../Components/images/box.jpg"
 
 
 
@@ -37,7 +38,7 @@ function CategoryPage (){
             
             <h1>Kategorier</h1>
             <Grid container className="row">
-              <CategoryCard img ={owl} title={"Alla kategorier"}/>
+              <CategoryCard img ={box} title={"Alla kategorier"}/>
               { createCategoryCards(Categories)} 
             </Grid>
         </div>

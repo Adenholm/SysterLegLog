@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Smokum&family=Fredericka+the+Great&family=Chewy&family=Titan+One&family=Lobster&family=Nunito&family=Rock+Salt&family=Exo+2:wght@400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nunito&family=Signika+Negative&family=Tajawal&family=Russo+One&family=Lobster+Two&family=Asap+Condensed:wght@400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Titan+One&family=Pirata+One&family=Fuzzy+Bubbles&family=Bubblegum+Sans&family=Londrina+Solid&family=Mitr&family=Abril+Fatface&family=Commissioner&family=Londrina+Outline");
+
 #root {
   height: 100vh;
   --bg-color: #ffffff;
@@ -18,7 +19,6 @@
   --font-boring: Commissioner;
   font-family: var(--font);
 }
-
 
 .pages-background {
   background-color: var(--bg-color);
@@ -56,25 +56,21 @@ button:hover {
   cursor: pointer;
 }
 
-.playButton{
+.playButton {
   background-color: #61dafb;
   position: absolute;
   right: 42%;
-  
 }
 
-.nextButton{
+.nextButton {
   position: absolute;
   right: 20%;
   top: 50%;
-  
 }
 
-.settingsButton{
+.settingsButton {
   position: fixed;
   right: 10%;
-  
-  
 }
 
 .iconImage {
